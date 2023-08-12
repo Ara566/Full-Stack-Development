@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Webpage</title>
+</head>
+<body bgcolor="aqua">
+    <center><b><h2><u style="color:rebeccapurple">Employee Registration Form</u></h2></b></center>
+    <form>
+        Firstname:<input type="text"   name="Firstname">
+        LastName:<input type="text"   name="Lastname"><br><br>
+        Date Of Birth: <input type="date" name="date"><br><br>
+        Id Number: <input type="text" name="Id"><br><br>
+        Passport Number: <input type="text" name="passport number"><br><br>
+        Password :<input type="password" name="pass" placeholder="Enter the password"><br><br>
+        Email:<input type="email" name="email" placeholder="Enter email"><br><br>
+        Phone Number: <input type="text" name="country code"  value="+91" size="2" readonly/>   
+        <input type="text" name="phone" size="10"/> <br><br>
+        Gender: 
+        <input type="radio" name="gender" value="male"/> Male  
+        <input type="radio" name="gender" value="female"/> Female  
+        <input type="radio" name="gender" value="others"/> Other <br><br>
+        Marital status: <input type="radio"  name="m" value="married">married
+        <input type="radio"  name="m" value="unmarried">unmarried <br><br>
+        Monthly Income:<input type="text" name="income" placeholder="enter monthly income"><br><br>
+        commencement date:<input type="datetime-local" ><br><br>
+        Address:<br>
+            <textarea name="message" rows="5" cols="60" placeholder="Enter your Address"></textarea><br>
+        Residential address:<br>
+        <textarea name="message" rows="5" cols="60" placeholder="Enter your Address"></textarea><br><br>
+        Please check to agree before you proceed:
+        <input type="checkbox" name="agree" value="agree"><br>
+        <button type="button" onclick="alert('SuccessfullyRegistered..Lets click Reset and Submit Another Responce..')" >submit</button>
+        <input type="reset">
+
+    </form>
+</body>
+</html>
