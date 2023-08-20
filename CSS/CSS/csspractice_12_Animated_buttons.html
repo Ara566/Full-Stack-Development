@@ -1,0 +1,47 @@
+<!DOCTYPE html> Animated Buttons with CSS Anima<html lang="en">
+<head>
+<title> CSS Animated Button </title>
+<meta charset="UTF-8">
+</head>
+<style>
+button {
+display: inline-block;
+border-radius: 3px;
+background-color: rgb(4, 236, 27);
+border:2px solid black;
+color: #d40808;
+text-align: center;
+font-size: 20px;
+padding: 7px;
+width: 120px;
+transition: all 0.5s;
+cursor: pointer;
+margin: 5px;
+}
+.button span {
+cursor: pointer;
+display: inline-block;
+position: relative;
+transition: 0.5s;
+}
+.button span:after {
+content:  '\00bb';
+position: absolute;
+opacity: 0.5;
+top: 0;
+right: -20px;
+transition: 0.5s;
+}
+.button:hover span {
+padding-right: 25px;
+}
+.button:hover span:after {
+opacity: 3;
+right: 0;
+}
+</style>
+<body>
+<h2>Animated Button</h2>
+<button class="button"><span>Hover </span></button>
+</body>
+</html>

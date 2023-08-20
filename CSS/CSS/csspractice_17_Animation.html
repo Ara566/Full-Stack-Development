@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation</title>
+    <style>
+        div{
+            width: 80px;
+            height: 80px;
+            background-color:red;
+            animation-name: example;
+            animation-duration: 10s;
+            position:relative;
+        }
+        @keyframes example {
+            /*
+            from{
+                background-color:red;
+                border: 2px solid blue;
+            }
+            to{
+                background-color: rgb(204, 248, 6);
+                border: 2px solid black;
+            }
+            */
+            0% {background-color: red; left: 0px; top:0px}
+            25% {background-color: rgb(243, 196, 9); left: 200px; top:200px}
+            50% {background-color: rgb(6, 162, 27); left: 200px; top:0px}
+            75% {background-color: rgb(36, 3, 133); left: 0px; top:200px}
+            100% {background-color: red; left: 0px; top:0px}
+            
+        }
+
+    </style>
+</head>
+<body>
+    <div>Hello</div>
+</body>
+</html>

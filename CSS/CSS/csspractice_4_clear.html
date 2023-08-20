@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Clear</title>
+    <style>
+        .sample:after{
+            display: block;
+            height: 0;
+            clear: both;
+            visibility: hidden;
+            content: ".";
+        }
+        div{
+            background:lightgreen;
+            border: 3px solid red;
+            width: 550px;
+        }
+        p{
+            width: 150px;
+            margin: 10px;
+            padding: 50px;
+            text-align: center;
+        }
+        p.color1{
+            float: right;
+            background: brown;
+            color: aliceblue;
+        }
+        p.color2{
+            float: left;
+            background: rgb(31, 3, 92);
+            color: aliceblue;
+        }
+        
+    </style>
+</head>
+<body>
+   <div class="sample">
+        <p class="color1">right</p>
+        <p class="color2">left</p>
+   </div>
+</body>
+</html>

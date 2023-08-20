@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button hover effect</title>
+    <style>
+        button{
+            background-color:aliceblue;
+            padding: 15px 25px;
+            margin: 3px 2px;
+            display: inline-block;
+            color: black;
+            font-size:small;
+            transition-duration: 1s ;
+        }
+        .b1{
+            border-color: rgb(201, 24, 145);
+        }
+        .b2{
+            border-color: rgb(43, 14, 229);
+        }
+        .b3{
+            border-color: rgb(234, 30, 30);
+        }
+        .b5{
+            border-color: rgb(3, 116, 25);
+        }
+        .b1:hover{ 
+            background-color:rgb(154, 33, 154) ;
+            color:rgb(14, 2, 11);
+            border: 2px solid rgb(6, 2, 22);
+        }
+        .b2:hover{ 
+            background-color:rgb(36, 36, 200);
+            color:rgb(2, 10, 18) ;
+            border: 2px solid black;
+        }
+        .b3:hover{ 
+            background-color:rgb(168, 34, 61) ;
+            color:rgb(4, 12, 19) ;
+            border: 2px solid black;
+        }
+        .b4:hover{ 
+            background-color:rgb(206, 203, 14) ;
+            color: rgb(4, 4, 17) ;
+            border: 2px solid black;
+        }
+        .b5:hover{ 
+            background-color:rgb(7, 153, 58) ;
+            color:rgb(4, 10, 16);
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Colour buttons with Hover</h1>
+    <h3><b>Life Cycle of Thread</b></h3>
+    <button class="b1">New</button>
+    <button class="b2">Runnable</button>
+    <button class="b3">Waiting</button>
+    <button class="b4">Timed Waiting</button>
+    <button class="b5">Terminated</button>
+</body>
+</html>

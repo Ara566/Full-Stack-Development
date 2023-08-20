@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title> Pure.CSS button </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/pure-min.css">
+    <style scoped>
+        .button-success,
+        .button-error,
+        .button-warning,
+        .button-secondary {
+            color: white;
+            border-radius: 4px;
+            text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+        }
+
+        .button-success {
+            background: rgb(28, 184, 65);
+        }
+
+        .button-error {
+            background: rgb(202, 60, 60);
+        }
+
+        .button-warning {
+            background: rgb(223, 117, 20);
+        }
+
+        .button-secondary {
+            background: rgb(66, 184, 221);
+        }
+
+        /*Button sizes*/
+
+        .button-xsmall {
+            font-size: 70%;
+        }
+
+        .button-small {
+            font-size: 85%;
+        }
+
+        .button-large {
+            font-size: 110%;
+        }
+
+        .button-xlarge {
+            font-size: 125%;
+        }
+        div {
+            margin: 10px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div>
+        <h3>Pure.CSS Default button</h3>
+        <a class="pure-button" href="#">A Pure Button</a>
+        <button class="pure-button"> A Pure Button </button>
+        <button class="pure-button" style="color: brown;">Submit</button>
+
+        <h3>Pure.CSS disabled button</h3>
+        <button class="pure-button pure-button-disabled"> A Disabled Button </button>
+        <button class="pure-button" disabled> A Disabled Button </button>
+
+        <h3>Pure.CSS Active button</h3>
+        <a class="pure-button pure-button-active" href="#"> Active Button </a>
+        <button class="pure-button pure-button-active"> Active Button </button>
+
+        <h3>Pure.CSS Primary Button</h3>
+        <a class="pure-button pure-button-primary" href="#"> A Primary Button </a>
+        <button class="pure-button pure-button-primary"> A Primary Button </button>
+
+        <h3>Pure.CSS Customized Buttons</h3>
+        <div>
+            <button class="button-success pure-button">Success Button</button>
+            <button class="button-error pure-button">Error Button</button>
+            <button class="button-warning pure-button">Warning Button</button>
+            <button class="button-secondary pure-button">Secondary Button</button>
+        </div>
+        <h3>Pure.CSS Button size</h3>
+        <div>
+            <button class="button-xsmall pure-button">Extra Small Button</button>
+            <button class="button-small pure-button">Small Button</button>
+            <button class="pure-button">Regular Button</button>
+            <button class="button-large pure-button">Large Button</button>
+            <button class="button-xlarge pure-button">Extra Large Button</button>
+        </div>
+
+    </div>
+</body>
+
+</html>

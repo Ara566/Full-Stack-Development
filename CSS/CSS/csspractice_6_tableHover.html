@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tables and Hoverable table</title>
+    <style>
+        table,th,td{
+            border: 1px solid rgb(86, 27, 173);
+        }
+        table{
+            border-collapse: collapse; 
+            width: 80%;
+            height: 50%;
+            margin-left: 80px;
+
+        }
+        th,td{
+            vertical-align: middle;
+            font-style: italic;
+        }
+        td:hover{ background-color: rgb(224, 240, 103);}
+        tr:hover{ background-color:rgb(159, 234, 209);}
+        h3{
+            color: rgb(49, 5, 129);
+            text-align: center;
+            
+        }
+        #a{
+            background-color: rgb(193, 141, 45);
+            color: aliceblue;
+            font-size:larger;
+        }
+
+    </style>
+</head>
+<body>
+    <h3>Colored Table Header</h3>
+    <table>
+        <tr>
+            <th id="a">StuentName</th>
+            <th id="a">Rollnumber</th>
+            <th id="a">rank</th>
+        </tr>
+        <tr>
+            <td>Gopal</td>
+            <td>23</td>
+            <td>52000</td>
+        </tr>
+        <tr>
+            <td>Srinu</td>
+            <td>35</td>
+            <td>25000</td>
+        </tr>
+        <tr>
+            <td>Srilatha</td>
+            <td>36</td>
+            <td>25000</td>
+        </tr>
+        <tr></tr>
+    </table>
+</body>
+</html>

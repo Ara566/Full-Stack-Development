@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buttons</title>
+    <style>
+        .style{
+            padding: 5px;
+            margin: 2px;
+            text-decoration: none;
+            font-style: italic;
+            text-align: center;
+            cursor: pointer;
+            border-radius: 50%;
+        }
+        .b1{ border-radius: 2px;}
+        .b2{border-radius: 4px;}
+        .b3{border-radius: 8px;}
+        .b4{border-radius: 12px;}
+        .b5{border-radius: 50%;}
+        .b1,.b2,.b3,.b4,.b5{
+            background-color: rgb(81, 4, 74);
+            color: aliceblue;
+            border-color: darkgreen;
+        }
+        .b1:hover,.b2:hover,.b3:hover,.b4:hover,.b5:hover{
+            background-color: rgb(183, 208, 232);
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <h3>CSS buttons</h3>
+    <p><button>Default button</button></p>
+    <button class="style">CSS button</button>
+    <p><button><a href="#" class="style">Link button</a></button></p>
+    <p><input type="button" class="style" value="input button"></p>
+    <h4>Rouned Buttons</h4>
+    <button class="b1">2px</button>
+    <button class="b2">4px</button>
+    <button class="b3">8px</button>
+    <button class="b4">12px</button>
+    <button class="b5">50%</button>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2D transformations</title>
+</head>
+<style>
+    .a{
+        width: 150px;
+        height: 150px;
+        border-radius: 3px;
+        background:rgb(46, 46, 186);
+        margin: 50px;
+        position: absolute;
+        transition:transform 0.8s;
+    }
+    .ab{
+        width: 150px;
+        height: 150px;
+        border-radius: 3px;
+        background:rgb(4, 187, 38);
+        margin: 50px;
+        position: absolute;
+        transition:transform 0.8s;
+    }
+    .abc{
+        width: 150px;
+        height: 150px;
+        border-radius: 3px;
+        background:rgb(236, 68, 68);
+        margin: 50px;
+        position: absolute;
+        transition:transform 0.8s;
+    }
+    .abcd{
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        background:rgb(201, 226, 10);
+        margin-top: 200px;
+        margin-left: 200px;
+        position: absolute;
+        transition:transform 1.5s;
+    }
+    .abcde{
+        width: 150px;
+        height: 150px;
+        border-radius: 3% 75%;
+        background:rgb(38, 5, 146);
+        margin-left: 360px;
+        transition-timing: ease-in-out;
+        transition:all 2s;
+        color: aliceblue;
+        box-shadow: 5px 5px 40px lawngreen;
+        
+        /*
+        transform-origin: left top;
+        */
+    }
+    .ab:hover{
+        transform: translatey(100px);
+    }
+    .abc:hover{
+        transform: translate(100px,-60px);
+        
+    }
+    .abcd:hover{
+        transform:scale(2,0);
+    }
+    .abcde:hover{
+        transform: rotate(360deg);
+       
+       /* transform: skew(-200deg,200deg); */
+    }
+</style>
+<body>
+    <!-- elements  rotate,move,skew,and scale-->
+    <!--useing translate(x-axis px,y-axis px) fn used 
+    to new position along the x and y axis-->
+    <div class="a">translate</div>
+    <div class="ab">translate</div>
+    <div class="abc">translate</div><br><br>
+    <div class="abcd">Scale</div>
+    <div class="abcde">Rotate</div>
+</body>
+
+</html>

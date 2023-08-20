@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title> Pure.CSS Multi-Colum Forms </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/pure-min.css">
+</head>
+
+<body>
+    <style>
+        form {
+            margin: 10px;
+        }
+    </style>
+    <form class="pure-form pure-form-stacked">
+        <fieldset>
+            <legend>Multi-Colum Forms</legend>
+            <div class="pure-g">
+                <div class="pure-u-1 pure-u-md-1-3">
+                    <label for="first-name">First Name</label>
+                    <input id="first-name" class="pure-u-10-15" type="text">
+                </div>
+                <div class="pure-u-1 pure-u-md-1-3">
+                    <label for="last-name">Last Name</label>
+                    <input id="last-name" class="pure-u-10-15" type="text">
+                </div>
+                <div class="pure-u-1 pure-u-md-1-3">
+                    <label for="email">E-Mail</label>
+                    <input id="email" class="pure-u-10-15" type="email" required>
+                </div>
+                <div class="pure-u-1 pure-u-md-1-3">
+                    <label for="city">City</label>
+                    <input id="city" class="pure-u-10-15" type="text">
+                </div>
+                <div class="pure-u-1 pure-u-md-1-3">
+                    <label for="state">State</label>
+                    <select id="state" class="pure-input-1-4">
+                        <option>TS</option>
+                        <option>AP</option>
+                        <option>GJ</option>
+                    </select>
+                </div>
+                <div class="pure-u-1 pure-u-md-1-3 ">
+                    Country:<input type="text" value="India" readonly class="pure-input-rounded"><!--readonly and pure-input-rounded-->
+                </div>
+            </div>
+            <label for="terms" class="pure-checkbox">
+                <input id="terms" type="checkbox"> I've read the terms and conditions
+            </label>
+            <button type="submit" class="pure-button pure-button-primary">Submit</button>
+        </fieldset>
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS layout</title>
+    <style>
+        body{
+            margin-top: 15px;
+
+        }
+        ul li{
+            margin: 5px;
+        }
+        li a{
+            color:rgb(25, 6, 2);
+        }
+        table{
+            width: 75%;
+            margin-left: 55px;
+            font: 15px arial;
+        }
+        #in{
+            width: 75%;
+            margin: 0 auto;
+            vertical-align: top;
+            background-color: rgb(195, 94, 153);
+        }
+        #demo{
+            background-color: rgb(71, 198, 71);
+        }
+        #footer{
+            background-color:rgb(124, 135, 3) ;
+        }
+        #bodyheight{
+            height: 200px;
+        }
+        #sidebar{
+            background-color: rgb(37, 110, 144);
+            width: 20px;
+            vertical-align: top;
+        }
+        p{
+            margin: 5px;
+            color: rgb(252, 250, 250);
+        }
+
+    </style>
+</head>
+<body>
+    <table cellpadding="15px:" cellspacing="0">
+        <tr>
+            <td colspan="2" id="demo">
+                <h1>Welcome to FSD by Aravind</h1>
+            </td>
+        </tr>
+        <tr id="bodyheight">
+            <td id="sidebar">
+                 <ul style="list-style: none; padding:0px; margin: 0px;">
+                    <li><a>Home</a></li>
+                    <li><a>About us</a></li>
+                    <li><a>Contact us</a></li>
+                    <li><a>sign up</a></li>
+                    <li><a>Feedback</a></li>
+                 </ul>
+            </td>
+            <td id="in">
+                <h2>Website Layout</h2>
+                <p>Congratuations</p>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" id="footer">
+                <p style="margin: 5px; text-align: center;">belongs to tb@?2023</p>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

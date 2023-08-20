@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>positioning of butttons</title>
+    <style>
+        body{
+            width: 100%;
+            height: 400px;
+        }
+        .b1{
+             border-radius: 2px;
+             position: fixed;
+             margin-left: 50%;
+             font-size: larger;
+             padding: 25px;
+            }
+        .b2{
+            margin-top: 200px;
+            vertical-align: middle;
+            position: fixed;
+            font-size: larger;
+            padding: 25px;
+        }
+        .b3{
+            border-radius: 8px;
+            margin-top:200px;
+            position: fixed;
+            right: 0;
+            font-size: larger;
+            padding: 25px;
+        }
+        .b4{
+            border-radius: 12px;
+            margin-left: 50%;
+            position: fixed;
+            bottom: 0;
+            font-size: larger;
+            padding: 25px;
+        }
+        .b5{
+            border-radius: 50%;
+            margin-left: 50%;
+            position: fixed;
+            bottom: 220px;
+            font-size: larger;
+            padding: 25px;
+        }
+        .b1,.b2,.b3,.b4,.b5{
+            background-color: rgb(81, 4, 74);
+            color: aliceblue;
+            border-color: darkgreen;
+        }
+        .b1:hover,.b2:hover,.b3:hover,.b4:hover,.b5:hover{
+            background-color: rgb(183, 208, 232);
+            color: black;
+        }
+        p{
+            text-align: start;
+        }
+    </style>
+</head>
+<body>
+    <button class="b1">2px</button>
+    <button class="b2">4px</button>
+    <button class="b3">8px</button>
+    <button class="b4">12px</button>
+    <button class="b5">50%</button>
+</body>
+</html>

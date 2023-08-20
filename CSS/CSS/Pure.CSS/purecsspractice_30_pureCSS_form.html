@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title> Pure.CSS Form </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/pure-min.css">
+</head>
+
+<body>
+  <style>
+    form {
+      margin: 20px;
+    }
+  </style>
+
+  <body>
+    <form class="pure-form pure-form-aligned">
+      <fieldset>
+        <div class="pure-control-group">
+          <label for="name">Username</label>
+          <input id="name" type="text" placeholder="Username" required>
+        </div>
+        <div class="pure-control-group">
+          <label for="email">Email</label>
+          <input id="email" type="text" placeholder="Email Address" required>
+        </div>
+        <div class="pure-control-group">
+          <label for="comments">Comments</label>
+          <input id="comments" type="text" placeholder="Comments">
+        </div>
+        <div class="pure-controls">
+          <label for="Free" class="pure-checkbox">
+            <input id="Free" type="checkbox" checked="checked">
+            Free
+          </label>
+          <label for="Paid" class="pure-checkbox">
+            <input id="Paid" type="checkbox">
+            Paid
+          </label>
+          <label for="dontknow" class="pure-checkbox">
+            <input id="dontknow" type="checkbox" disabled>
+            Don't know (Disabled)
+          </label>
+        </div>
+        <div class="pure-controls">
+          <label for="male" class="pure-radio">
+            <input id="male" type="radio" name="gender" value="male" checked>
+            Male
+          </label>
+          <label for="female" class="pure-radio">
+            <input id="female" type="radio" name="gender" value="female">
+            Female
+          </label>
+          <label for="dontknow1" class="pure-radio">
+            <input id="dontknow1" type="radio" name="gender" value="female" disabled>
+            Don't know (Disabled)
+          </label>
+          <button type="submit" class="pure-button pure-button-primary">Submit</button>
+        </div>
+      </fieldset>
+    </form>
+  </body>
+
+</html>

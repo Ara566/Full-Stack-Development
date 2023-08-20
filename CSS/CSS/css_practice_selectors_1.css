@@ -1,0 +1,40 @@
+/*id selector*/
+#z{
+    color: darkmagenta;
+    text-align: center;
+}
+#abc{
+    color: #b71818;
+    text-align: center;
+    background-repeat: space;
+}
+#_xyz{
+    color: black;
+    text-align: center;
+    background-color: blue;
+    text-decoration: dotted;
+}
+/*class selector*/
+.z{
+    color: #b71887;
+    text-align:calc();
+}
+.abc{
+    color: #186ab7;
+    text-align:calc();
+    background-repeat: space;
+}
+._xyz{
+    color: black;
+    text-align:calc();
+    background-color: rgb(238, 255, 0);
+    text-decoration:#b71825;
+}
+i,b,h3{
+    color: black;
+    background-color: cadetblue;
+
+}
+*{
+    background-color: #25b718;
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS pagination</title>
+</head>
+<style>
+    .pagination li{
+        display: inline;
+    }
+    .pagination li a{
+        text-decoration: none;
+        border: 2px;
+        padding: 5px 10px;
+    }
+    .pagination li:hover{
+        background-color: rgb(77, 187, 136);
+    }
+    a:hover{
+        color: rgb(23, 3, 3);
+    }
+    .pagination li a:active{
+        background-color: black;
+        color: rgb(250, 49, 9);
+    }
+
+    .pagination li a:hover:not(.active){
+        background-color: aliceblue;
+    }
+
+
+</style>
+<body>
+    <h3>pagination</h3>
+    <ul class="pagination">
+        <li><a href="#"><< previous</a></li>
+        <li><a href="https://talentbattle.in">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#">5</a></li>
+        <li><a href="#">6</a></li>
+        <li><a href="#">more >></a></li>
+    </ul>
+</body>
+</html>
