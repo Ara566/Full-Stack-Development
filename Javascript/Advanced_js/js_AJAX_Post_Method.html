@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function displayname(){
+        var request=new XMLHttpRequest();
+        //instantiatean using open method
+        request.open("POST","sample.php");
+        //checking state
+        request.onreadystatechange=function()
+        {
+            if(this.readyState === 4 && this.status === 200){
+                document.getElementById("result").innerHTML=this.responseText;
+
+            }
+        };
+        var form=document.getElementById("myform");
+        var formdata=new FormData(form);
+        reques.send(formdata);
+    }
+    </script>
+</head>
+<body>
+    <form>
+        <label>Name:</label>
+        <div><input type="text" name="name"></div>
+        <br>
+        <label>Feedback:</label>
+        <div><textarea name="feedback"></textarea></div>
+        <button type="button" onclick="displayname">Post Method</button>
+    
+    
+    
+    </form>
+
+    <div id="result">
+        <p>Post method....</p>
+    </div>
+</body>
+</html>

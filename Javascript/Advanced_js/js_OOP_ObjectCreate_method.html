@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object.create method in js oop</title>
+</head>
+
+<body>
+    <script>
+        //Creating an object
+        const student = {
+            first_name: 'aravind',
+            last_name: 'kumar',
+            display_full_name: function () {
+                return `${student.first_name} ${student.last_name}`
+            }
+        }
+        //Creating an instance for the student object
+        const student1 = Object.create(student);
+        //Updating the last name
+        student1.first_name="java";
+        console.log(student1.first_name);
+    </script>
+</body>
+
+</html>

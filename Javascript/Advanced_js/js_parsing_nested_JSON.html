@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parsing nested JSON data in js</title>
+</head>
+<body>
+    <script>
+        var json=
+        `{ 
+            "employee":
+            {
+                "name":"aravind",
+                "age":20,
+                "friends":["sandy","karthik","shiv","ram","bal"],
+                "marks":
+                {
+                "math":75,"science":70,"chemistry":70
+                }
+            }
+        }`;
+        var obj=JSON.parse(json);
+
+        function display(obj)  //for printing all the values
+        {
+            for(var i in obj){
+                if(obj[i] instanceof Object){  //instanceof return true or false
+                    display(obj[i]);//calling fn with same reference of instance
+                }
+                else{
+                    document.write(obj[i]+"<br>");
+                }
+            }
+        };
+        display(obj);
+
+        document.write("<hr>");
+
+        document.write(obj["employee"]["name"]+"<br>"); // single value printing particular extraction
+        document.write(obj["employee"]["friends"][1]+"<br>"); //[name of object][name of my arr][index value]
+        document.write(obj["employee"]["marks"]["math"]);
+    </script>
+</body>
+</html>

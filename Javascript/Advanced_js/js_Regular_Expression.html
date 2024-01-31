@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Creating a Regular Expression in JavaScript</title>
+</head>
+
+<body>
+    <script>
+        var str = "Mr. White";
+        // Literal syntax
+        var regex1 =(/^Mr\./);
+        if (regex1.test(str)) {
+            document.write("Match found!");
+        } else {
+            document.write("Match not found.");
+        }
+        document.write("<hr>");
+        // Constructor syntax
+        var regex2 = new RegExp("^Mr\\.");
+        if (regex2.test(str)) {
+            document.write("Match found!");
+        } else {
+            document.write("Match not found.");
+        }
+    </script>
+</body>

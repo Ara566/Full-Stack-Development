@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js oop object constructor</title>
+</head>
+
+<body>
+    <script>
+        //Creating a constructor function
+        function student(first_name, last_name) {
+            this.first_name = first_name,
+                this.last_name = last_name,
+                this.display_full_name = function () {
+                    return `${first_name} ${last_name}`;
+                }
+        }
+        //Creating instances for the constructor function
+        const student1 = new student("Aravind", "Kumar");
+        const student2 = new student("arvi", "Bag");
+        console.log(student1.display_full_name());
+        console.log(student2.display_full_name());
+    </script>
+</body>
+
+</html>

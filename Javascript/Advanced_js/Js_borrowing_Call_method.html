@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Borrowing methods</title>
+</head>
+<body>
+    <script>
+        var objectA={
+            name:"Aravind",
+            say:function(sample){
+                document.write(sample+","+this.name);//reference this op
+            }
+        }
+        objectA.say("hello");
+        document.write("<br>");
+
+        var ObjectB={
+            name:"Kumar"
+        }
+        document.write("<br>");
+
+        objectA.say.call(ObjectB,"hello");//using call method 
+        //for apply method .apply(objectB,["hello"]);
+
+
+    </script>
+</body>
+</html>

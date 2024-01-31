@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>JavaScript Match Strings Beginning with Specific Characters Using Regular Expression</title>
+</head>
+
+<body>
+    <script>
+        var regex = /^J/;//starting...........//  t$ ending
+        var names = ["James Bond", "Clark Kent", "John Rambo"];
+        // Loop through names array and display matched names
+        for (var name of names) {
+            if (regex.test(name)) {
+                document.write("<p>" + name + "</p>")
+            }
+        }
+    </script>
+</body>
+
+</html>

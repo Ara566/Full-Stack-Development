@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js Diff addEventListener to Diff event types</title>
+</head>
+<body>
+    <button type="button" id="sample">click me</button>
+    <script>
+        var btn=document.getElementById("sample");
+        function welcome(){
+            alert("welcome....");
+        }
+        function mouseover(){
+            btn.style.background="red";
+            btn.style.padding="100px";
+        }
+        function mouseout(){
+            btn.style.background="";
+            btn.style.padding="0px";
+        }
+
+
+
+        btn.addEventListener("click",welcome);
+        btn.addEventListener("mouseover",mouseover);
+        btn.addEventListener("mouseout",mouseout);
+    </script>
+
+</body>
+</html>

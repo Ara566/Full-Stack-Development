@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>JavaScript Assigning Multiple Event Listeners on a Single Event</title>
+</head>
+
+<body>
+    <button id="myBtn">Click Me</button>
+    <script>
+        function firstFunction() {
+            alert("The first function executed successfully!");
+        }
+        function secondFunction() {
+            alert("The second function executed successfully");
+        }
+        var btn = document.getElementById("myBtn");
+        btn.addEventListener("click", firstFunction);
+        btn.addEventListener("click", secondFunction);
+    </script>
+</body>
+
+</html>

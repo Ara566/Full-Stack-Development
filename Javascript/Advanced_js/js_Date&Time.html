@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date and time</title>
+</head>
+<body>
+    <script>
+        document.write(new Date()+"<br>");
+        document.write(new Date(2023,7)+"<br>");
+        document.write("29 August 2023"+"<br>");
+        document.write(new Date(1517356800000));
+
+        document.write("<h1> date and time strings </h1>");
+        var d=new Date();
+        document.write(d.toDateString()+"<br>");
+        document.write(d.toLocaleDateString());
+        document.write("<h1> get year,month,date </h1>");
+        document.write(d.getFullYear()+"<br>");
+    </script>
+
+</body>
+</html>

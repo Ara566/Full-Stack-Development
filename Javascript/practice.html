@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*div{
+            width: 80px;
+            height: 80px;
+            animation-name: example;
+            animation-duration: 7s;
+            position:relative;
+        }
+        @keyframes example{
+            0% {left: 0px; top:0px}
+            10%{left:30pxpx;right: 30px;}
+            20%{left:100px;right: 100px;}
+            30%{left: 200px;right: 200px;}
+            40%{left:300px;right: 300px;}
+            50%{left:500px;right: 500px;}
+        }*/
+    </style>
+</head>
+<body>
+    <div>
+    <button id="rotate" type="button" style="border-radius: 50%;padding: 50px; ">Circle</button>
+    </div>
+    <script>
+        function rot() {
+            document.getElementById("rotate").innerHTML=AnimationTimeline;
+        }
+
+        setInterval(rot,3000);
+    </script>
+    
+</body>
+</html>

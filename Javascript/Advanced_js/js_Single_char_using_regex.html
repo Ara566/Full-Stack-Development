@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Match a Single Character Using Regular Expression in JavaScript</title>
+</head>
+
+<body>
+    <script>
+        var regex = (/ca[kf]e/);
+        var str = "He was eating cake in the cafe.";
+        // Test the string against the regular expression
+        if (regex.test(str)) {
+            document.write("Match found!");
+        } else {
+            document.write("Match not found.");
+        }
+    </script>
+</body>
+
+</html>

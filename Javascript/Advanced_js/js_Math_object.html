@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function circlerad(rad){
+            var area=Math.PI*rad*rad;
+            return area;
+        }
+        document.write("<h2> Math object</h2>")
+
+        document.write(circlerad(5)+"<br>");
+
+        document.write(Math.abs(-20.5)+"<br>");//getting absolute vale mean positive value
+        document.write(Math.random()+"<br>");
+        document.write(Math.sqrt(2)+"<br>");
+        document.write(Math.ceil(3.5)+"<br>");
+        document.write(Math.floor(3.5)+"<br>");
+        document.write(Math.round(3.6)+"<br>");
+        document.write(Math.max(1,2,3,4,5,6,7,8)+"<br>");
+        document.write(Math.min(1,2,3,4,5,6,7,8)+"<br>");
+        arr=[1,2,3,4,5,20,5];
+        document.write(Math.max.apply(null,arr)+"<br>");
+        document.write(Math.pow(2,2)+"<br>"); //2^2=4
+         
+        document.write(Math.sin(0*Math.PI/180)+"<br");
+        document.write(Math.cos(90*Math.PI/180)+"<br");
+    </script>
+</body>
+</html>

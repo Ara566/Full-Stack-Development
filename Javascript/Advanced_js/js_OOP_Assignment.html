@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //Creating a constructor function
+            function student(first_name,last_name,dob,rollno,email,percentage) {
+                this.first_name = first_name,
+                this.last_name = last_name,
+                this.dob=dob,this.rollno=rollno,this.email=email,
+                this.percentage=percentage
+                this.display_full_name = function () {
+                    return `${first_name} ${last_name} ${dob} ${rollno} ${email} ${percentage}`;
+                }
+            }
+        //Creating instances for the constructor function
+            const student1 = new student(prompt("student1"));
+            const student2 = new student(prompt("student2"));
+            const student3 = new student(prompt("student3"));
+            console.log(student1.display_full_name());
+            console.log(student2.display_full_name());
+            console.log(student3.display_full_name());
+    </script>
+</body>
+
+</html>

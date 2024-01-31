@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js AJAX GET Request</title>
+
+    <script>
+        function displayname(){
+        var request=new XMLHttpRequest();
+        //instantiatean using open method
+        request.open("GET","sample.php? fname=aravind&lname=Kumar");
+        //checking state
+        request.onreadystatechange=function()
+        {
+            if(this.readyState === 4 && this.status === 200){
+                document.getElementById("result").innerHTML=this.responseText;
+
+            }
+        };
+        reques.send();
+    }
+
+    </script>
+</head>
+<body>
+    <div id="result">
+        <p>Content Replaced....</p>
+    </div>
+    <button type="button" onclick="displayname()">Display</button>
+</body>
+</html>

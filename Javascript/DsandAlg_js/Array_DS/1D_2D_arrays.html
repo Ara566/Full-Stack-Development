@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        Array.matrix=function(nrows,ncols,init){
+            var arr=[];
+            for(var i=0;i<nrows;i++){
+                var columns=[];
+                for(var j=0;j<ncols;j++){
+                    columns[j]=init;
+                }
+                arr[i]=columns;
+            }
+            return arr;
+        }
+
+        var nums=Array.matrix(5,5,0);
+        document.write(nums+'<br>');
+        nums[2][2]='aravind';
+        nums[2][3]=10;
+        document.write(nums);
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function setcookie(name,value,duration){
+            var cookie= name + "=" + encodeURIComponent(value);
+            if(typeof duration === "number"){
+                cookie+=";max-age="+(duration*24*60*60);
+                // cookie+="firstname=jscourse;path=/;max-age="+(duration*24*60*60);
+        //update cookie   ="firstname=pythoncourse;path=/;max-age="+10*24*60*60;
+                //generating cookie attribute
+                document.cookie=cookie;
+            }
+
+        }
+
+        function getcookie(name)
+        {
+            var cookiearr=document.cookie.split(";");
+            for(var i=0;i<cookiearr.length;i++)
+            {
+                var cookiepair=cookiearr[i].split("=");
+                // trim() removing white spaces at biggining of cookie
+                if(name == cookiepair[0].trim())
+                {
+                    return decodeURIComponent(cookiepair[1]);
+                }
+            } 
+            return null;
+        }
+
+        //cross check case
+        function checkcookie()
+        {
+            var firstname=getcookie("firstname");
+            if(firstname!=null){
+                alert("hello "+firstname);
+            }
+            else{
+                firstname=prompt("enter your name:");
+            }
+            if(firstname!=null && firstname!=""){
+                setcookie("firstname",firstname,1);
+            }
+        }
+        window.onload=checkcookie;
+
+    </script>
+</body>
+</html>

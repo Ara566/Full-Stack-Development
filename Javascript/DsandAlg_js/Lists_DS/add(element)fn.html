@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add element AT THE END of the list</title>
+</head>
+<body>
+    <script>
+        add(element){
+            var newnode=new Node(element);
+
+            var currentnode; //store current node
+            if(this.head == null)
+            {
+                this.head=newnode;
+            }  
+            else {
+                currentnode=this.head;
+                //iterate to the end of the list
+                while(currentnode.next){
+                    currentnode=currentnode.next;
+                }
+
+                currentnode.next=node;
+            }
+            this.size++;
+        }
+    </script>
+</body>
+</html>
