@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Broadcasting...</title>
+    </head>
+    <!--script-->
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        var socket=io();
+        //broadcasting event and handling
+        //must be proper description send from server side
+       /* socket.on('broadcast',function(data){
+            document.body.innerHTML = "";
+            document.write(data.description);
+        }); */
+
+        //updated its good
+        /*
+        socket.on('newclientconnect',function(data){
+            document.body.innerHTML = "";
+            document.write(data.description);
+        });
+        */
+
+        //room joining
+        socket.on('connecttoroom',function(data){
+            document.body.innerHTML = "";
+            document.write(data);
+        })
+
+    </script>
+    <body>
+        <h1>Request comming from server
+             handling by client in broadcasting.html</h1>
+    </body>
+</html>

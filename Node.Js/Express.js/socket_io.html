@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Hello </title>
+    </head>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        const socket=io();
+        //socket.on('message',function(data){document.write(data)};)      //server to client
+        socket.emit('clientEvent',"sent an event from client side.")       //client to server terminal o/p
+    </script>
+    <body>
+        <h1>Welcome to my cham club</h1>
+    </body>
+</html>
