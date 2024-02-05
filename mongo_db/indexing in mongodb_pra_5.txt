@@ -1,0 +1,498 @@
+//indexing in mongodb
+show dbs
+admin     40.00 KiB
+collage  120.00 KiB
+config   108.00 KiB
+local     80.00 KiB
+mydb      40.00 KiB
+use collage
+already on db collage
+show collections
+students
+teachers
+//..............before indexing..............
+db.teachers.find().pretty()
+{
+  _id: 1,
+  firstName: 'John',
+  lastName: 'King',
+  gender: 'male',
+  email: 'john.king@abc.com',
+  salary: 5000,
+  department: {
+    name: 'HR'
+  },
+  overallsalary: 10000
+}
+{
+  _id: 2,
+  firstName: 'Sachin',
+  lastName: 'T',
+  gender: 'male',
+  email: 'sachin.t@abc.com',
+  salary: 8000,
+  department: {
+    name: 'Finance'
+  },
+  overallsalary: 10000
+}
+{
+  _id: 3,
+  firstName: 'James',
+  lastName: 'Bond',
+  gender: 'male',
+  email: 'jamesb@abc.com',
+  salary: 7500,
+  department: {
+    name: 'Marketing'
+  },
+  overallsalary: 10000
+}
+{
+  _id: 4,
+  firstName: 'Rosy',
+  lastName: 'Brown',
+  gender: 'female',
+  email: 'rosyb@abc.com',
+  salary: 5000,
+  department: {
+    name: 'HR'
+  },
+  overallsalary: 10000
+}
+{
+  _id: 5,
+  firstName: 'Kapil',
+  lastName: 'D',
+  gender: 'male',
+  email: 'kapil.d@abc.com',
+  salary: 4500,
+  department: {
+    name: 'Finance'
+  },
+  overallsalary: 10000
+}
+{
+  _id: 6,
+  firstName: 'Amitabh',
+  lastName: 'B',
+  gender: 'male',
+  email: 'amitabh.b@abc.com',
+  salary: 7000,
+  department: {
+    name: 'Marketing'
+  },
+  overallsalary: 10000
+}
+{
+  _id: 7,
+  firstName: 'Aravind',
+  department: {
+    name: 'market',
+    performance: 5.78,
+    lastdayper: -5.4,
+    score: 520
+  }
+}
+//after indexing
+db.teachers.createIndexes({firstName:1})
+TypeError: e.map is not a function
+db.teachers.createIndexes({'firstName':1})
+TypeError: e.map is not a function
+db.teachers.createIndex({'firstName':1})
+firstName_1
+db.teachers.createIndex({'salary':-1})
+salary_-1
+db.teachers.dropIndex({'firstName':1})
+{ nIndexesWas: 3, ok: 1 }
+db.teachers.createIndex({'firstName':1})
+firstName_1
+db.teachers.getIndexes()
+[
+  { v: 2, key: { _id: 1 }, name: '_id_' },
+  { v: 2, key: { salary: -1 }, name: 'salary_-1' },
+  { v: 2, key: { firstName: 1 }, name: 'firstName_1' }
+]
+collage
+Selection deleted
+
+
+//using students collection
+db.students.insertMany([{"studentId":2,"studentName":"Aravind","studentAge":20},{"studentId":20,"studentName":"susu","studentAge":26
+
+},{"studentId":4,"studentName":"idrees","studentAge":27},{"studentId":40,"studentName":"Rohit","studentAge":30}])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('65bf335d6885235bd87a9163'),
+    '1': ObjectId('65bf335d6885235bd87a9164'),
+    '2': ObjectId('65bf335d6885235bd87a9165'),
+    '3': ObjectId('65bf335d6885235bd87a9166')
+  }
+}
+db.students.find().pretty()
+{
+  _id: ObjectId('65bf32f16885235bd87a915f'),
+  studentId: 2,
+  studentName: 'Aravind',
+  studentAge: 20
+}
+{
+  _id: ObjectId('65bf32f16885235bd87a9160'),
+  studentId: 20,
+  studentName: 'Ajinkya',
+  studentAge: 26
+}
+{
+  _id: ObjectId('65bf32f16885235bd87a9161'),
+  studentId: 4,
+  studentName: 'Amit',
+  studentAge: 27
+}
+{
+  _id: ObjectId('65bf32f16885235bd87a9162'),
+  studentId: 40,
+  studentName: 'Rohit',
+  studentAge: 30
+}
+{
+  _id: ObjectId('65bf335d6885235bd87a9163'),
+  studentId: 2,
+  studentName: 'Aravind',
+  studentAge: 20
+}
+{
+  _id: ObjectId('65bf335d6885235bd87a9164'),
+  studentId: 20,
+  studentName: 'susu',
+  studentAge: 26
+}
+{
+  _id: ObjectId('65bf335d6885235bd87a9165'),
+  studentId: 4,
+  studentName: 'idrees',
+  studentAge: 27
+}
+{
+  _id: ObjectId('65bf335d6885235bd87a9166'),
+  studentId: 40,
+  studentName: 'Rohit',
+  studentAge: 30
+}
+db.students.createIndex({'studentId':1})
+studentId_1
+db.students.find().pretty()
+{
+  _id: ObjectId('65bf32f16885235bd87a915f'),
+  studentId: 2,
+  studentName: 'Aravind',
+  studentAge: 20
+}
+{
+  _id: ObjectId('65bf32f16885235bd87a9160'),
+  studentId: 20,
+  studentName: 'Ajinkya',
+  studentAge: 26
+}
+{
+  _id: ObjectId('65bf32f16885235bd87a9161'),
+  studentId: 4,
+  studentName: 'Amit',
+  studentAge: 27
+}
+{
+  _id: ObjectId('65bf32f16885235bd87a9162'),
+  studentId: 40,
+  studentName: 'Rohit',
+  studentAge: 30
+}
+{
+  _id: ObjectId('65bf335d6885235bd87a9163'),
+  studentId: 2,
+  studentName: 'Aravind',
+  studentAge: 20
+}
+{
+  _id: ObjectId('65bf335d6885235bd87a9164'),
+  studentId: 20,
+  studentName: 'susu',
+  studentAge: 26
+}
+{
+  _id: ObjectId('65bf335d6885235bd87a9165'),
+  studentId: 4,
+  studentName: 'idrees',
+  studentAge: 27
+}
+{
+  _id: ObjectId('65bf335d6885235bd87a9166'),
+  studentId: 40,
+  studentName: 'Rohit',
+  studentAge: 30
+}
+db.students.getIndexes()
+[
+  { v: 2, key: { _id: 1 }, name: '_id_' },
+  { v: 2, key: { studentId: 1 }, name: 'studentId_1' }
+]
+db.students.createIndex({'studentName':1,'studentAge:1'})
+SyntaxError: Unexpected token (1:55)
+
+> 1 | db.students.createIndex({'studentName':1,'studentAge:1'})
+    |                                                        ^
+db.students.createIndex({'studentName':1,'studentAge':1})
+studentName_1_studentAge_1
+db.students.getIndexes()
+[
+  { v: 2, key: { _id: 1 }, name: '_id_' },
+  { v: 2, key: { studentId: 1 }, name: 'studentId_1' },
+  {
+    v: 2,
+    key: { studentName: 1, studentAge: 1 },
+    name: 'studentName_1_studentAge_1'
+  }
+]
+db.students.find().sort({ studentName: 1, studentAge: 1 }).pretty()
+{
+  _id: ObjectId('65bf32f16885235bd87a9160'),
+  studentId: 20,
+  studentName: 'Ajinkya',
+  studentAge: 26
+}
+{
+  _id: ObjectId('65bf32f16885235bd87a9161'),
+  studentId: 4,
+  studentName: 'Amit',
+  studentAge: 27
+}
+{
+  _id: ObjectId('65bf32f16885235bd87a915f'),
+  studentId: 2,
+  studentName: 'Aravind',
+  studentAge: 20
+}
+{
+  _id: ObjectId('65bf32f16885235bd87a9162'),
+  studentId: 40,
+  studentName: 'Rohit',
+  studentAge: 30
+}
+{
+  _id: ObjectId('65bf335d6885235bd87a9165'),
+  studentId: 4,
+  studentName: 'idrees',
+  studentAge: 27
+}
+{
+  _id: ObjectId('65bf335d6885235bd87a9164'),
+  studentId: 20,
+  studentName: 'susu',
+  studentAge: 26
+}
+//multikey_index
+db.students.insertMany([{"studentId":68,"studentName":"Aravind","studentAge":20,skills:['c','java','python','nodejs']},{"studentId":76,"studentName":"susu","studentAge":26,skills:['c','java']
+
+}])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('65bf39876885235bd87a9167'),
+    '1': ObjectId('65bf39876885235bd87a9168')
+  }
+}
+db.students.find().pretty()
+{
+  _id: ObjectId('65bf32f16885235bd87a915f'),
+  studentId: 2,
+  studentName: 'Aravind',
+  studentAge: 20
+}
+{
+  _id: ObjectId('65bf32f16885235bd87a9160'),
+  studentId: 20,
+  studentName: 'Ajinkya',
+  studentAge: 26
+}
+{
+  _id: ObjectId('65bf32f16885235bd87a9161'),
+  studentId: 4,
+  studentName: 'Amit',
+  studentAge: 27
+}
+{
+  _id: ObjectId('65bf32f16885235bd87a9162'),
+  studentId: 40,
+  studentName: 'Rohit',
+  studentAge: 30
+}
+{
+  _id: ObjectId('65bf335d6885235bd87a9164'),
+  studentId: 20,
+  studentName: 'susu',
+  studentAge: 26
+}
+{
+  _id: ObjectId('65bf335d6885235bd87a9165'),
+  studentId: 4,
+  studentName: 'idrees',
+  studentAge: 27
+}
+{
+  _id: ObjectId('65bf39876885235bd87a9167'),
+  studentId: 68,
+  studentName: 'Aravind',
+  studentAge: 20,
+  skills: [
+    'c',
+    'java',
+    'python',
+    'nodejs'
+  ]
+}
+{
+  _id: ObjectId('65bf39876885235bd87a9168'),
+  studentId: 76,
+  studentName: 'susu',
+  studentAge: 26,
+  skills: [
+    'c',
+    'java'
+  ]
+}
+db.students.createIndex({skills:1})
+skills_1
+db.students.find({skills:['c','java']}).pretty()
+{
+  _id: ObjectId('65bf39876885235bd87a9168'),
+  studentId: 76,
+  studentName: 'susu',
+  studentAge: 26,
+  skills: [
+    'c',
+    'java'
+  ]
+}
+//exact record is fetched now try another way
+db.students.find({skills:['c']}).pretty()
+db.students.insertMany([
+{
+"name":"Vijaydeverakonda",
+"location":{
+	"type":"Point",
+	"coordinates":[
+			-73.97,
+			40.77
+		       ]
+},
+"office":"IT"
+},
+{
+"name":"Rasmika",
+"location":{
+	"type":"Point",
+	"coordinates":[
+			-73.9928,
+			40.7193]
+},
+"office":"IT"
+},
+{
+"name":"priya",
+"location":{
+	"type":"Point",
+	"coordinates":[
+			-73.9375,
+			40.8303]
+},
+"office":"IT"
+}
+])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('65bf3d216885235bd87a9169'),
+    '1': ObjectId('65bf3d216885235bd87a916a'),
+    '2': ObjectId('65bf3d216885235bd87a916b')
+  }
+}
+db.students.createIndex({location:"2dsphere"})
+location_2dsphere
+db.students.find({location:{$near:{$geometry:{type:"Point",coordinates:[-73.9667,40.78]},$minDistance:1000,$maxDistance:5000}}}).pretty()
+{
+  _id: ObjectId('65bf3d216885235bd87a9169'),
+  name: 'Vijaydeverakonda',
+  location: {
+    type: 'Point',
+    coordinates: [
+      -73.97,
+      40.77
+    ]
+  },
+  office: 'IT'
+}
+db.students.createIndex({name:"text"}) //text index
+name_text
+db.students.find({$text:{$search:"Vijaydeverakonda"}})
+{
+  _id: ObjectId('65bf3d216885235bd87a9169'),
+  name: 'Vijaydeverakonda',
+  location: {
+    type: 'Point',
+    coordinates: [
+      -73.97,
+      40.77
+    ]
+  },
+  office: 'IT'
+}
+db.students.insertOne([
+
+{
+"_id":1,
+"title":"MongoDB",
+"categories":["mongodb"],
+"authors":[1,2],
+"authorTags":{
+	"inclusions":["RDBMS","NoSQL"],
+	"usedin":["Security","Multipurpose"]}	
+}
+
+]
+)
+{
+  acknowledged: true,
+  insertedId: ObjectId('65bf40a16885235bd87a916c')
+}
+db.students.createIndex({"authorTags.$**":1})
+authorTags.$**_1
+db.students.find({"authorTags.inclusions":"RDBMS"})
+db.students.find({"authorTags.usedin":"Multipurpose"}).pretty()
+db.students.getIndexes()
+[
+  { v: 2, key: { _id: 1 }, name: '_id_' },
+  { v: 2, key: { studentId: 1 }, name: 'studentId_1' },
+  {
+    v: 2,
+    key: { studentName: 1, studentAge: 1 },
+    name: 'studentName_1_studentAge_1'
+  },
+  { v: 2, key: { skills: 1 }, name: 'skills_1' },
+  {
+    v: 2,
+    key: { location: '2dsphere' },
+    name: 'location_2dsphere',
+    '2dsphereIndexVersion': 3
+  },
+  {
+    v: 2,
+    key: { _fts: 'text', _ftsx: 1 },
+    name: 'name_text',
+    weights: { name: 1 },
+    default_language: 'english',
+    language_override: 'language',
+    textIndexVersion: 3
+  },
+  { v: 2, key: { 'authorTags.$**': 1 }, name: 'authorTags.$**_1' }
+]
+collage
+Selection deleted

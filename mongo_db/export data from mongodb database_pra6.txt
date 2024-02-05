@@ -1,0 +1,30 @@
+//export data from mongodb database
+
+C:\Users\ARVIND>mongodump
+2024-02-04T20:25:34.438+0530    writing admin.system.version to dump\admin\system.version.bson
+2024-02-04T20:25:34.784+0530    done dumping admin.system.version (1 document)
+2024-02-04T20:25:34.785+0530    writing mydb.orders to dump\mydb\orders.bson
+2024-02-04T20:25:34.786+0530    writing collage.students to dump\collage\students.bson
+2024-02-04T20:25:34.787+0530    writing collage.teachers to dump\collage\teachers.bson
+2024-02-04T20:25:34.789+0530    done dumping mydb.orders (1 document)
+2024-02-04T20:25:34.791+0530    done dumping collage.students (12 documents)
+2024-02-04T20:25:34.792+0530    done dumping collage.teachers (6 documents)
+
+C:\Users\ARVIND>mongoexport
+2024-02-04T20:25:40.568+0530    must specify a collection
+2024-02-04T20:25:40.569+0530    try 'mongoexport --help' for more information
+
+
+C:\Users\ARVIND>mongoexport --db collage --collection teachers --out E:\exportmongodb\exportteachers.json
+2024-02-04T20:28:58.664+0530    connected to: mongodb://localhost/
+2024-02-04T20:28:58.690+0530    exported 6 records
+
+
+C:\Users\ARVIND>mongoexport --db collage --collection teachers --type=csv --fields firstName,email,gender,salary --out E:\exportmongodb\exportteachers.csv
+2024-02-04T20:36:19.974+0530    connected to: mongodb://localhost/
+2024-02-04T20:36:19.990+0530    exported 6 records
+
+C:\Users\ARVIND>
+
+
+/..................................................................................................................................

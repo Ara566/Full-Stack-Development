@@ -1,0 +1,765 @@
+show dbs
+admin     40.00 KiB
+collage  120.00 KiB
+config   108.00 KiB
+local     80.00 KiB
+mydb      40.00 KiB
+use collage
+already on db collage
+db.teachers.insertMany([{
+  _id: 1,
+  firstName: 'John',
+  lastName: 'King',
+  gender: 'male',
+  email: 'john.king@abc.com',
+  salary: 5000,
+  department: {
+    name: 'HR'
+  }
+},
+{
+  _id: 2,
+  firstName: 'Sachin',
+  lastName: 'T',
+  gender: 'male',
+  email: 'sachin.t@abc.com',
+  salary: 8000,
+  department: {
+    name: 'Finance'
+  }
+},
+{
+  _id: 3,
+  firstName: 'James',
+  lastName: 'Bond',
+  gender: 'male',
+  email: 'jamesb@abc.com',
+  salary: 7500,
+  department: {
+    name: 'Marketing'
+  }
+},
+{
+  _id: 4,
+  firstName: 'Rosy',
+  lastName: 'Brown',
+  gender: 'female',
+  email: 'rosyb@abc.com',
+  salary: 5000,
+  department: {
+    name: 'HR'
+  }
+},
+{
+  _id: 5,
+  firstName: 'Kapil',
+  lastName: 'D',
+  gender: 'male',
+  email: 'kapil.d@abc.com',
+  salary: 4500,
+  department: {
+    name: 'Finance'
+  }
+},
+{
+  _id: 6,
+  firstName: 'Amitabh',
+  lastName: 'B',
+  gender: 'male',
+  email: 'amitabh.b@abc.com',
+  salary: 7000,
+  department: {
+    name: 'Marketing'
+  }
+}])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': 1,
+    '1': 2,
+    '2': 3,
+    '3': 4,
+    '4': 5,
+    '5': 6
+  }
+}
+db.teachers.find().pretty()
+{
+  _id: 1,
+  firstName: 'John',
+  lastName: 'King',
+  gender: 'male',
+  email: 'john.king@abc.com',
+  salary: 5000,
+  department: {
+    name: 'HR'
+  }
+}
+{
+  _id: 2,
+  firstName: 'Sachin',
+  lastName: 'T',
+  gender: 'male',
+  email: 'sachin.t@abc.com',
+  salary: 8000,
+  department: {
+    name: 'Finance'
+  }
+}
+{
+  _id: 3,
+  firstName: 'James',
+  lastName: 'Bond',
+  gender: 'male',
+  email: 'jamesb@abc.com',
+  salary: 7500,
+  department: {
+    name: 'Marketing'
+  }
+}
+{
+  _id: 4,
+  firstName: 'Rosy',
+  lastName: 'Brown',
+  gender: 'female',
+  email: 'rosyb@abc.com',
+  salary: 5000,
+  department: {
+    name: 'HR'
+  }
+}
+{
+  _id: 5,
+  firstName: 'Kapil',
+  lastName: 'D',
+  gender: 'male',
+  email: 'kapil.d@abc.com',
+  salary: 4500,
+  department: {
+    name: 'Finance'
+  }
+}
+{
+  _id: 6,
+  firstName: 'Amitabh',
+  lastName: 'B',
+  gender: 'male',
+  email: 'amitabh.b@abc.com',
+  salary: 7000,
+  department: {
+    name: 'Marketing'
+  }
+}
+//performming logical operations
+db.teachers.find({$and:[{gender:'male'},{$gt:{salary:5000}}]})
+MongoServerError: unknown top level operator: $gt. If you have a field name that starts with a '$' symbol, consider using $getField or $setField.
+db.teachers.find({$and:[{gender:'male'},{'$gt':{salary:5000}}]})
+MongoServerError: unknown top level operator: $gt. If you have a field name that starts with a '$' symbol, consider using $getField or $setField.
+db.teachers.find({$and:[{gender:'male'},{salary:{$gte:5000}}]})
+{
+  _id: 1,
+  firstName: 'John',
+  lastName: 'King',
+  gender: 'male',
+  email: 'john.king@abc.com',
+  salary: 5000,
+  department: {
+    name: 'HR'
+  }
+}
+{
+  _id: 2,
+  firstName: 'Sachin',
+  lastName: 'T',
+  gender: 'male',
+  email: 'sachin.t@abc.com',
+  salary: 8000,
+  department: {
+    name: 'Finance'
+  }
+}
+{
+  _id: 3,
+  firstName: 'James',
+  lastName: 'Bond',
+  gender: 'male',
+  email: 'jamesb@abc.com',
+  salary: 7500,
+  department: {
+    name: 'Marketing'
+  }
+}
+{
+  _id: 6,
+  firstName: 'Amitabh',
+  lastName: 'B',
+  gender: 'male',
+  email: 'amitabh.b@abc.com',
+  salary: 7000,
+  department: {
+    name: 'Marketing'
+  }
+}
+db.teachers.find({$and:[{gender:'male'},{salary:{$gt:5000}}]})
+{
+  _id: 2,
+  firstName: 'Sachin',
+  lastName: 'T',
+  gender: 'male',
+  email: 'sachin.t@abc.com',
+  salary: 8000,
+  department: {
+    name: 'Finance'
+  }
+}
+{
+  _id: 3,
+  firstName: 'James',
+  lastName: 'Bond',
+  gender: 'male',
+  email: 'jamesb@abc.com',
+  salary: 7500,
+  department: {
+    name: 'Marketing'
+  }
+}
+{
+  _id: 6,
+  firstName: 'Amitabh',
+  lastName: 'B',
+  gender: 'male',
+  email: 'amitabh.b@abc.com',
+  salary: 7000,
+  department: {
+    name: 'Marketing'
+  }
+}
+db.teachers.find({$and:[{salary:{$lt:7000}},{salary:{$gt:5000}}]})
+db.teachers.find({$and:[{salary:{$lt:8000}},{salary:{$gt:5000}}]})
+{
+  _id: 3,
+  firstName: 'James',
+  lastName: 'Bond',
+  gender: 'male',
+  email: 'jamesb@abc.com',
+  salary: 7500,
+  department: {
+    name: 'Marketing'
+  }
+}
+{
+  _id: 6,
+  firstName: 'Amitabh',
+  lastName: 'B',
+  gender: 'male',
+  email: 'amitabh.b@abc.com',
+  salary: 7000,
+  department: {
+    name: 'Marketing'
+  }
+}
+db.teachers.find({$nor:[{salary:5000}]})
+{
+  _id: 2,
+  firstName: 'Sachin',
+  lastName: 'T',
+  gender: 'male',
+  email: 'sachin.t@abc.com',
+  salary: 8000,
+  department: {
+    name: 'Finance'
+  }
+}
+{
+  _id: 3,
+  firstName: 'James',
+  lastName: 'Bond',
+  gender: 'male',
+  email: 'jamesb@abc.com',
+  salary: 7500,
+  department: {
+    name: 'Marketing'
+  }
+}
+{
+  _id: 5,
+  firstName: 'Kapil',
+  lastName: 'D',
+  gender: 'male',
+  email: 'kapil.d@abc.com',
+  salary: 4500,
+  department: {
+    name: 'Finance'
+  }
+}
+{
+  _id: 6,
+  firstName: 'Amitabh',
+  lastName: 'B',
+  gender: 'male',
+  email: 'amitabh.b@abc.com',
+  salary: 7000,
+  department: {
+    name: 'Marketing'
+  }
+}
+collage
+
+
+
+show dbs
+admin    40.00 KiB
+collage  96.00 KiB
+config   72.00 KiB
+local    80.00 KiB
+mydb     40.00 KiB
+use collage
+switched to db collage
+show collections
+students
+teachers
+db.teachers.find().pretty()
+{
+  _id: 1,
+  firstName: 'John',
+  lastName: 'King',
+  gender: 'male',
+  email: 'john.king@abc.com',
+  salary: 5000,
+  department: {
+    name: 'HR'
+  }
+}
+{
+  _id: 2,
+  firstName: 'Sachin',
+  lastName: 'T',
+  gender: 'male',
+  email: 'sachin.t@abc.com',
+  salary: 8000,
+  department: {
+    name: 'Finance'
+  }
+}
+{
+  _id: 3,
+  firstName: 'James',
+  lastName: 'Bond',
+  gender: 'male',
+  email: 'jamesb@abc.com',
+  salary: 7500,
+  department: {
+    name: 'Marketing'
+  }
+}
+{
+  _id: 4,
+  firstName: 'Rosy',
+  lastName: 'Brown',
+  gender: 'female',
+  email: 'rosyb@abc.com',
+  salary: 5000,
+  department: {
+    name: 'HR'
+  }
+}
+{
+  _id: 5,
+  firstName: 'Kapil',
+  lastName: 'D',
+  gender: 'male',
+  email: 'kapil.d@abc.com',
+  salary: 4500,
+  department: {
+    name: 'Finance'
+  }
+}
+{
+  _id: 6,
+  firstName: 'Amitabh',
+  lastName: 'B',
+  gender: 'male',
+  email: 'amitabh.b@abc.com',
+  salary: 7000,
+  department: {
+    name: 'Marketing'
+  }
+}
+db.teachers.updateMany({},{$set:{overallsalary:10000}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 6,
+  modifiedCount: 6,
+  upsertedCount: 0
+}
+db.teachers.find().pretty()
+{
+  _id: 1,
+  firstName: 'John',
+  lastName: 'King',
+  gender: 'male',
+  email: 'john.king@abc.com',
+  salary: 5000,
+  department: {
+    name: 'HR'
+  },
+  overallsalary: 10000
+}
+{
+  _id: 2,
+  firstName: 'Sachin',
+  lastName: 'T',
+  gender: 'male',
+  email: 'sachin.t@abc.com',
+  salary: 8000,
+  department: {
+    name: 'Finance'
+  },
+  overallsalary: 10000
+}
+{
+  _id: 3,
+  firstName: 'James',
+  lastName: 'Bond',
+  gender: 'male',
+  email: 'jamesb@abc.com',
+  salary: 7500,
+  department: {
+    name: 'Marketing'
+  },
+  overallsalary: 10000
+}
+{
+  _id: 4,
+  firstName: 'Rosy',
+  lastName: 'Brown',
+  gender: 'female',
+  email: 'rosyb@abc.com',
+  salary: 5000,
+  department: {
+    name: 'HR'
+  },
+  overallsalary: 10000
+}
+{
+  _id: 5,
+  firstName: 'Kapil',
+  lastName: 'D',
+  gender: 'male',
+  email: 'kapil.d@abc.com',
+  salary: 4500,
+  department: {
+    name: 'Finance'
+  },
+  overallsalary: 10000
+}
+{
+  _id: 6,
+  firstName: 'Amitabh',
+  lastName: 'B',
+  gender: 'male',
+  email: 'amitabh.b@abc.com',
+  salary: 7000,
+  department: {
+    name: 'Marketing'
+  },
+  overallsalary: 10000
+}
+db.teachers.aggregate([{$match:{gender:male}},{$project:{result:{$subtract:["overallsalary","salary"]}}}])
+ReferenceError: male is not defined
+db.teachers.aggregate([{$match:{gender:'male'}},{$project:{result:{$subtract:["overallsalary","salary"]}}}])
+MongoServerError: Failed to optimize pipeline :: caused by :: can't $subtract string from string
+db.teachers.aggregate([{$match:{gender:'male'}},{$project:{result:{$subtract:["$overallsalary","$salary"]}}}])
+{
+  _id: 1,
+  result: 5000
+}
+{
+  _id: 2,
+  result: 2000
+}
+{
+  _id: 3,
+  result: 2500
+}
+{
+  _id: 5,
+  result: 5500
+}
+{
+  _id: 6,
+  result: 3000
+}
+//above errs shows to do the syntax in correct manner......
+//above is subtract method
+db.teachers.aggregate([{$match:{gender:'male'}},{$project:{firstname:1,salary:1,newmulsalary:{$multiply:['$salaary',2]}}}])
+{
+  _id: 1,
+  salary: 5000,
+  newmulsalary: null
+}
+{
+  _id: 2,
+  salary: 8000,
+  newmulsalary: null
+}
+{
+  _id: 3,
+  salary: 7500,
+  newmulsalary: null
+}
+{
+  _id: 5,
+  salary: 4500,
+  newmulsalary: null
+}
+{
+  _id: 6,
+  salary: 7000,
+  newmulsalary: null
+}
+db.teachers.aggregate([{$match:{gender:'male'}},{$project:{name:1,salary:1,newmulsalary:{$multiply:['$salary',2]}}}])
+{
+  _id: 1,
+  salary: 5000,
+  newmulsalary: 10000
+}
+{
+  _id: 2,
+  salary: 8000,
+  newmulsalary: 16000
+}
+{
+  _id: 3,
+  salary: 7500,
+  newmulsalary: 15000
+}
+{
+  _id: 5,
+  salary: 4500,
+  newmulsalary: 9000
+}
+{
+  _id: 6,
+  salary: 7000,
+  newmulsalary: 14000
+}
+db.teachers.find(gender:'male').pretty()
+SyntaxError: Unexpected token, expected "," (1:23)
+
+> 1 | db.teachers.find(gender:'male').pretty()
+    |                        ^
+db.teachers.find({gender:'female'}).pretty()
+{
+  _id: 4,
+  firstName: 'Rosy',
+  lastName: 'Brown',
+  gender: 'female',
+  email: 'rosyb@abc.com',
+  salary: 5000,
+  department: {
+    name: 'HR'
+  },
+  overallsalary: 10000
+}
+//$divide
+db.teachers.aggregate([{$match:{gender:'male'}},{$project:{salary:1,reducedsalary:{$divide:['$salary',2]}}}])
+{
+  _id: 1,
+  salary: 5000,
+  reducedsalary: 2500
+}
+{
+  _id: 2,
+  salary: 8000,
+  reducedsalary: 4000
+}
+{
+  _id: 3,
+  salary: 7500,
+  reducedsalary: 3750
+}
+{
+  _id: 5,
+  salary: 4500,
+  reducedsalary: 2250
+}
+{
+  _id: 6,
+  salary: 7000,
+  reducedsalary: 3500
+}
+
+
+
+
+
+
+db.teachers.aggregate([{$match:{gender:'male'}},{$project:{name:2,finalsalary:{$abs:{$subtract:['$overallsalary','$salary']}}}}])
+{
+  _id: 1,
+  finalsalary: 5000
+}
+{
+  _id: 2,
+  finalsalary: 2000
+}
+{
+  _id: 3,
+  finalsalary: 2500
+}
+{
+  _id: 5,
+  finalsalary: 5500
+}
+{
+  _id: 6,
+  finalsalary: 3000
+}
+db.teachers.insertOne({_id:7,firstName:'Aravind',department:{name:'market',performance:5.78,lastdayper:-5.4}})
+MongoServerError: E11000 duplicate key error collection: collage.teachers index: _id_ dup key: { _id: 7 }
+db.teachers.insertOne({_id:7,firstName:'Aravind',department:{name:'market',performance:5.78,lastdayper:-5.4}})
+{
+  acknowledged: true,
+  insertedId: 7
+}
+db.teachers
+collage.teachers
+db.teachers.find({_id:7})
+{
+  _id: 7,
+  firstName: 'Aravind',
+  department: {
+    name: 'market',
+    performance: 5.78,
+    lastdayper: -5.4
+  }
+}
+db.teachers.aggregate([{$match:{gender:'male'}},{$project:{afterfloor:{$floor:'$department.performance'}}}])
+{
+  _id: 1,
+  afterfloor: null
+}
+{
+  _id: 2,
+  afterfloor: null
+}
+{
+  _id: 3,
+  afterfloor: null
+}
+{
+  _id: 5,
+  afterfloor: null
+}
+{
+  _id: 6,
+  afterfloor: null
+}
+db.teachers.find().pretty()
+{
+  _id: 1,
+  firstName: 'John',
+  lastName: 'King',
+  gender: 'male',
+  email: 'john.king@abc.com',
+  salary: 5000,
+  department: {
+    name: 'HR'
+  },
+  overallsalary: 10000
+}
+{
+  _id: 2,
+  firstName: 'Sachin',
+  lastName: 'T',
+  gender: 'male',
+  email: 'sachin.t@abc.com',
+  salary: 8000,
+  department: {
+    name: 'Finance'
+  },
+  overallsalary: 10000
+}
+{
+  _id: 3,
+  firstName: 'James',
+  lastName: 'Bond',
+  gender: 'male',
+  email: 'jamesb@abc.com',
+  salary: 7500,
+  department: {
+    name: 'Marketing'
+  },
+  overallsalary: 10000
+}
+{
+  _id: 4,
+  firstName: 'Rosy',
+  lastName: 'Brown',
+  gender: 'female',
+  email: 'rosyb@abc.com',
+  salary: 5000,
+  department: {
+    name: 'HR'
+  },
+  overallsalary: 10000
+}
+{
+  _id: 5,
+  firstName: 'Kapil',
+  lastName: 'D',
+  gender: 'male',
+  email: 'kapil.d@abc.com',
+  salary: 4500,
+  department: {
+    name: 'Finance'
+  },
+  overallsalary: 10000
+}
+{
+  _id: 6,
+  firstName: 'Amitabh',
+  lastName: 'B',
+  gender: 'male',
+  email: 'amitabh.b@abc.com',
+  salary: 7000,
+  department: {
+    name: 'Marketing'
+  },
+  overallsalary: 10000
+}
+{
+  _id: 7,
+  firstName: 'Aravind',
+  department: {
+    name: 'market',
+    performance: 5.78,
+    lastdayper: -5.4
+  }
+}
+db.teachers.aggregate([{$match:{firstname:'Aravind'}},{$project:{afterfloor:{$floor:'$department.performance'}}}])
+db.teachers.aggregate([{$match:{_id:7}},{$project:{afterfloor:{$floor:'$department.performance'}}}])
+{
+  _id: 7,
+  afterfloor: 5
+}
+db.teachers.aggregate([{$match:{_id:7}},{$project:{aftermodscore:{$mod:['$department.score',10]}}}])
+{
+  _id: 7,
+  aftermodscore: 0
+}
+db.teachers.aggregate([{$match:{_id:7}},{$project:{aftermodscore:{$mod:['$department.score',3]}}}])
+{
+  _id: 7,
+  aftermodscore: 1
+}
+db.teachers.aggregate([{$match:{_id:7}},{$project:{squareroot520:{$sqrt:'$department.score'}}}])
+{
+  _id: 7,
+  squareroot520: 22.80350850198276
+}
+collage
+Selection deleted
+

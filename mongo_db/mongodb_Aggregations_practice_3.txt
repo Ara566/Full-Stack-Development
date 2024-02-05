@@ -1,0 +1,315 @@
+show dbs
+admin    40.00 KiB
+collage  80.00 KiB
+config   72.00 KiB
+local    80.00 KiB
+mydb     40.00 KiB
+use collage
+switched to db collage
+show collections
+students
+teachers
+db.teachers.insertMany([
+    { 
+        _id:1,
+        firstName: "John",
+        lastName: "King",
+        gender:'male',
+        email: "john.king@abc.com",
+        salary: 5000,
+        department: { 
+                    "name":"HR" 
+                }
+    },
+    { 
+        _id:2,
+        firstName: "Sachin",
+        lastName: "T",
+        gender:'male',
+        email: "sachin.t@abc.com",
+        salary: 8000,
+        department: { 
+                    "name":"Finance" 
+                }
+    },
+    { 
+        _id:3,
+        firstName: "James",
+        lastName: "Bond",
+        gender:'male',
+        email: "jamesb@abc.com",
+        salary: 7500,
+        department: { 
+                    "name":"Marketing" 
+                }
+    },
+    { 
+        _id:4,
+        firstName: "Rosy",
+        lastName: "Brown",
+        gender:'female',
+        email: "rosyb@abc.com",
+        salary: 5000, 
+        department: { 
+                    "name":"HR" 
+                }
+
+    },
+    { 
+        _id:5,
+        firstName: "Kapil",
+        lastName: "D",
+        gender:'male',
+        email: "kapil.d@abc.com",
+        salary: 4500,
+        department: { 
+                    "name":"Finance" 
+                }
+
+    },
+    { 
+        _id:6,
+        firstName: "Amitabh",
+        lastName: "B",
+        gender:'male',
+        email: "amitabh.b@abc.com",
+        salary: 7000,
+        department: { 
+                    "name":"Marketing" 
+                }
+    }
+])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': 1,
+    '1': 2,
+    '2': 3,
+    '3': 4,
+    '4': 5,
+    '5': 6
+  }
+}
+db.teachers.find()
+{
+  _id: 1,
+  firstName: 'John',
+  lastName: 'King',
+  gender: 'male',
+  email: 'john.king@abc.com',
+  salary: 5000,
+  department: {
+    name: 'HR'
+  }
+}
+{
+  _id: 2,
+  firstName: 'Sachin',
+  lastName: 'T',
+  gender: 'male',
+  email: 'sachin.t@abc.com',
+  salary: 8000,
+  department: {
+    name: 'Finance'
+  }
+}
+{
+  _id: 3,
+  firstName: 'James',
+  lastName: 'Bond',
+  gender: 'male',
+  email: 'jamesb@abc.com',
+  salary: 7500,
+  department: {
+    name: 'Marketing'
+  }
+}
+{
+  _id: 4,
+  firstName: 'Rosy',
+  lastName: 'Brown',
+  gender: 'female',
+  email: 'rosyb@abc.com',
+  salary: 5000,
+  department: {
+    name: 'HR'
+  }
+}
+{
+  _id: 5,
+  firstName: 'Kapil',
+  lastName: 'D',
+  gender: 'male',
+  email: 'kapil.d@abc.com',
+  salary: 4500,
+  department: {
+    name: 'Finance'
+  }
+}
+{
+  _id: 6,
+  firstName: 'Amitabh',
+  lastName: 'B',
+  gender: 'male',
+  email: 'amitabh.b@abc.com',
+  salary: 7000,
+  department: {
+    name: 'Marketing'
+  }
+}
+db.teachers.aggregate([{$match:{gender:'female'}}])
+{
+  _id: 4,
+  firstName: 'Rosy',
+  lastName: 'Brown',
+  gender: 'female',
+  email: 'rosyb@abc.com',
+  salary: 5000,
+  department: {
+    name: 'HR'
+  }
+}
+// $match and find()  functionality same
+db.teachers.find({gender:'female'})
+{
+  _id: 4,
+  firstName: 'Rosy',
+  lastName: 'Brown',
+  gender: 'female',
+  email: 'rosyb@abc.com',
+  salary: 5000,
+  department: {
+    name: 'HR'
+  }
+}
+db.teachers.aggregate([{$group:{_id:"$department"}}])
+{
+  _id: {
+    name: 'Marketing'
+  }
+}
+{
+  _id: {
+    name: 'HR'
+  }
+}
+{
+  _id: {
+    name: 'Finance'
+  }
+}
+db.teachers.aggregate([{$group:{_id:"$department.name",totalEmployees:{$sum:1}}}])
+{
+  _id: 'Marketing',
+  totalEmployees: 2
+}
+{
+  _id: 'HR',
+  totalEmployees: 2
+}
+{
+  _id: 'Finance',
+  totalEmployees: 2
+}
+db.teachers.aggregate([{$match:{gender:'male'}},{$group:{_id:"$department.name"}},totalemployees:{$sum:1}])
+SyntaxError: Unexpected token, expected "," (1:96)
+
+> 1 | db.teachers.aggregate([{$match:{gender:'male'}},{$group:{_id:"$department.name"}},totalemployees:{$sum:1}])
+    |                                                                                                 ^
+db.teachers.aggregate([{$match:{gender:'male'}},{$group:{_id:"$department.name",totalemployees:{$sum:1}}}])
+{
+  _id: 'HR',
+  totalemployees: 1
+}
+{
+  _id: 'Finance',
+  totalemployees: 2
+}
+{
+  _id: 'Marketing',
+  totalemployees: 2
+}
+//above one emp is female
+db.teachers.aggregate([{$match:{gender:'male'}},{$group:{_id:{deptName:'$department.name'},totalSalaries:{$sum:'$salary'}}}])
+{
+  _id: {
+    deptName: 'Marketing'
+  },
+  totalSalaries: 14500
+}
+{
+  _id: {
+    deptName: 'Finance'
+  },
+  totalSalaries: 12500
+}
+{
+  _id: {
+    deptName: 'HR'
+  },
+  totalSalaries: 5000
+}
+//sorting stage
+db.teachers.aggregate([{$match:{gender:'male'}},{$sort:firstname:1}])
+SyntaxError: Unexpected token, expected "," (1:64)
+
+> 1 | db.teachers.aggregate([{$match:{gender:'male'}},{$sort:firstname:1}])
+    |                                                                 ^
+db.teachers.aggregate([{$match:{gender:'male'}},{$sort:{firstname:1}}])
+{
+  _id: 1,
+  firstName: 'John',
+  lastName: 'King',
+  gender: 'male',
+  email: 'john.king@abc.com',
+  salary: 5000,
+  department: {
+    name: 'HR'
+  }
+}
+{
+  _id: 2,
+  firstName: 'Sachin',
+  lastName: 'T',
+  gender: 'male',
+  email: 'sachin.t@abc.com',
+  salary: 8000,
+  department: {
+    name: 'Finance'
+  }
+}
+{
+  _id: 3,
+  firstName: 'James',
+  lastName: 'Bond',
+  gender: 'male',
+  email: 'jamesb@abc.com',
+  salary: 7500,
+  department: {
+    name: 'Marketing'
+  }
+}
+{
+  _id: 5,
+  firstName: 'Kapil',
+  lastName: 'D',
+  gender: 'male',
+  email: 'kapil.d@abc.com',
+  salary: 4500,
+  department: {
+    name: 'Finance'
+  }
+}
+{
+  _id: 6,
+  firstName: 'Amitabh',
+  lastName: 'B',
+  gender: 'male',
+  email: 'amitabh.b@abc.com',
+  salary: 7000,
+  department: {
+    name: 'Marketing'
+  }
+}
+//1 indicates acsending order
+collage

@@ -1,0 +1,694 @@
+show dbs
+admin     40.00 KiB
+collage   80.00 KiB
+config   108.00 KiB
+local     80.00 KiB
+mydb      40.00 KiB
+use collage
+switched to db collage
+db
+collage
+db.students.find().pretty()
+{
+  _id: ObjectId('65bc92a5df5eb12853b67d91'),
+  sid: 520,
+  sname: 'aravind Kumar',
+  sphone: 9390215759,
+  smarks: 95
+}
+{
+  _id: ObjectId('65bc92a5df5eb12853b67d92'),
+  sid: 521,
+  sname: 'susu',
+  sphone: 8564773420,
+  smarks: 86
+}
+{
+  _id: ObjectId('65bc92eedf5eb12853b67d93'),
+  sid: 522,
+  sname: 'idress',
+  sphone: 9546785759,
+  smarks: 89
+}
+{
+  _id: ObjectId('65bc92eedf5eb12853b67d94'),
+  sid: 523,
+  sname: 'shivudu',
+  sphone: 9673453420,
+  smarks: 56
+}
+//update
+db.students.updateOne({sid:520},{$set:{smarks:100}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+db.students.find({sid:520}).pretty()
+{
+  _id: ObjectId('65bc92a5df5eb12853b67d91'),
+  sid: 520,
+  sname: 'aravind Kumar',
+  sphone: 9390215759,
+  smarks: 100
+}
+//update the sname:santhosh where sid:523
+db.students.updateOne({sid:523},{$set:{sname:'santhosh'}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+db.students.find({sid:523}).pretty()
+{
+  _id: ObjectId('65bc92eedf5eb12853b67d94'),
+  sid: 523,
+  sname: 'santhosh',
+  sphone: 9673453420,
+  smarks: 56
+}
+//removing specified field smarks where sid:523
+db.students.updateOne({sid:523},{$unset:{smarks:56}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+db.students.find({sid:523}).pretty()
+{
+  _id: ObjectId('65bc92eedf5eb12853b67d94'),
+  sid: 523,
+  sname: 'santhosh',
+  sphone: 9673453420
+}
+db.students.updateOne({sid:523},{$set:{smarks:57}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+db.students.find({sid:523}).pretty()
+{
+  _id: ObjectId('65bc92eedf5eb12853b67d94'),
+  sid: 523,
+  sname: 'santhosh',
+  sphone: 9673453420,
+  smarks: 57
+}
+db.students.find().pretty()
+{
+  _id: ObjectId('65bc92a5df5eb12853b67d91'),
+  sid: 520,
+  sname: 'aravind Kumar',
+  sphone: 9390215759,
+  smarks: 100
+}
+{
+  _id: ObjectId('65bc92a5df5eb12853b67d92'),
+  sid: 521,
+  sname: 'susu',
+  sphone: 8564773420,
+  smarks: 86
+}
+{
+  _id: ObjectId('65bc92eedf5eb12853b67d93'),
+  sid: 522,
+  sname: 'idress',
+  sphone: 9546785759,
+  smarks: 89
+}
+{
+  _id: ObjectId('65bc92eedf5eb12853b67d94'),
+  sid: 523,
+  sname: 'santhosh',
+  sphone: 9673453420,
+  smarks: 57
+}
+
+
+
+
+db.students.updateMany({sid:520},{$rename:{sname:'Aravind Kumar'}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+db.students.find({sid:520}).pretty()
+{
+  _id: ObjectId('65bc92a5df5eb12853b67d91'),
+  sid: 520,
+  sphone: 9390215759,
+  smarks: 100,
+  'Aravind Kumar': 'aravind Kumar'
+}
+
+
+
+
+db.students.find({sid:520}).pretty()
+{
+  _id: ObjectId('65bc92a5df5eb12853b67d91'),
+  sid: 520,
+  sphone: 9390215759,
+  smarks: 100,
+  'Aravind Kumar': 'aravind Kumar'
+}
+db.students.updateOne({sid:520},{$rename:{'Aravind Kumar':'sname'}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+db.students.find({sid:520}).pretty()
+{
+  _id: ObjectId('65bc92a5df5eb12853b67d91'),
+  sid: 520,
+  sphone: 9390215759,
+  smarks: 100,
+  sname: 'aravind Kumar'
+}
+db.students.updateOne({sid:520},{$rename:{'aravind kumar':'Aravindh'}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 0,
+  upsertedCount: 0
+}
+db.students.find({sid:520}).pretty()
+{
+  _id: ObjectId('65bc92a5df5eb12853b67d91'),
+  sid: 520,
+  sphone: 9390215759,
+  smarks: 100,
+  sname: 'aravind Kumar'
+}
+db.students.updateOne({sid:523},{$inc:{smarks:23}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+db.students.find({sid:523}).pretty()
+{
+  _id: ObjectId('65bc92eedf5eb12853b67d94'),
+  sid: 523,
+  sname: 'santhosh',
+  sphone: 9673453420,
+  smarks: 80
+}
+db.students.updateOne({sid:523},{$set:{smarks:85,sname:'gopal'}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+db.students.find({sid:523}).pretty()
+{
+  _id: ObjectId('65bc92eedf5eb12853b67d94'),
+  sid: 523,
+  sname: 'gopal',
+  sphone: 9673453420,
+  smarks: 85
+}
+
+
+
+//now dealing with arrays add one array to the 520 id 
+db.students.updateOne({sid:520},{$set:{"passed sub":["math","english","chemistry","cs","os"]}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+db.students.find({sid:520}).pretty()
+{
+  _id: ObjectId('65bc92a5df5eb12853b67d91'),
+  sid: 520,
+  sphone: 9390215759,
+  smarks: 100,
+  sname: 'aravind Kumar',
+  'passed sub': [
+    'math',
+    'english',
+    'chemistry',
+    'cs',
+    'os'
+  ]
+}
+
+
+
+
+
+
+//hoo noo i forgot to add one more subject data_structures
+
+db.students.updateOne({sid:520},{$rename:{'passed sub':'subjects'}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+db.students.find({sid:520}).pretty()
+{
+  _id: ObjectId('65bc92a5df5eb12853b67d91'),
+  sid: 520,
+  sphone: 9390215759,
+  smarks: 100,
+  sname: 'aravind Kumar',
+  subjects: [
+    'math',
+    'english',
+    'chemistry',
+    'cs',
+    'os'
+  ]
+}
+
+
+
+
+
+db.students.updateOne({sid:520},{$push:{subjects:"data structures"}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+db.students.find({sid:520}).pretty()
+{
+  _id: ObjectId('65bc92a5df5eb12853b67d91'),
+  sid: 520,
+  sphone: 9390215759,
+  smarks: 100,
+  sname: 'aravind Kumar',
+  subjects: [
+    'math',
+    'english',
+    'chemistry',
+    'cs',
+    'os',
+    'data structures'
+  ]
+}
+
+
+
+
+
+
+
+
+//add sub at the end of the array
+db.students.updateOne({sid:520},{$push:{subjects:{$each:['python'],$position:-1}}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+db.students.find({sid:520}).pretty()
+{
+  _id: ObjectId('65bc92a5df5eb12853b67d91'),
+  sid: 520,
+  sphone: 9390215759,
+  smarks: 100,
+  sname: 'aravind Kumar',
+  subjects: [
+    'math',
+    'english',
+    'chemistry',
+    'cs',
+    'os',
+    'python',
+    'data structures'
+  ]
+}
+ 
+ 
+
+show dbs
+admin     40.00 KiB
+collage   80.00 KiB
+config   108.00 KiB
+local     80.00 KiB
+mydb      40.00 KiB
+use collage
+switched to db collage
+show collections
+students
+teachers
+db.students.find().pretty()
+{
+  _id: ObjectId('65bc92a5df5eb12853b67d91'),
+  sid: 520,
+  sphone: 9390215759,
+  smarks: 100,
+  sname: 'aravind Kumar',
+  subjects: [
+    'math',
+    'english',
+    'chemistry',
+    'cs',
+    'os',
+    'python',
+    'data structures'
+  ]
+}
+{
+  _id: ObjectId('65bc92a5df5eb12853b67d92'),
+  sid: 521,
+  sname: 'susu',
+  sphone: 8564773420,
+  smarks: 86
+}
+{
+  _id: ObjectId('65bc92eedf5eb12853b67d93'),
+  sid: 522,
+  sname: 'idress',
+  sphone: 9546785759,
+  smarks: 89
+}
+{
+  _id: ObjectId('65bc92eedf5eb12853b67d94'),
+  sid: 523,
+  sname: 'gopal',
+  sphone: 9673453420,
+  smarks: 85
+}
+db.students.updateOne({sid:520},{$set:{"passed sub":["math","english","chemistry","cs","os"]}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+db.students.find({sid:520}).pretty()
+{
+  _id: ObjectId('65bc92a5df5eb12853b67d91'),
+  sid: 520,
+  sphone: 9390215759,
+  smarks: 100,
+  sname: 'aravind Kumar',
+  subjects: [
+    'math',
+    'english',
+    'chemistry',
+    'cs',
+    'os',
+    'python',
+    'data structures'
+  ],
+  'passed sub': [
+    'math',
+    'english',
+    'chemistry',
+    'cs',
+    'os'
+  ]
+}
+db.students.updateOne({sid:520},{$rename:{'passed sub':'subjects'}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+db.students.find({sid:520}).pretty()
+{
+  _id: ObjectId('65bc92a5df5eb12853b67d91'),
+  sid: 520,
+  sphone: 9390215759,
+  smarks: 100,
+  sname: 'aravind Kumar',
+  subjects: [
+    'math',
+    'english',
+    'chemistry',
+    'cs',
+    'os'
+  ]
+}
+// diff between $unset and $pull
+db.students.updateOne({sid:520},{$unset:{smarks:""}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+db.students.find({sid:520}).pretty()
+{
+  _id: ObjectId('65bc92a5df5eb12853b67d91'),
+  sid: 520,
+  sphone: 9390215759,
+  sname: 'aravind Kumar',
+  subjects: [
+    'math',
+    'english',
+    'chemistry',
+    'cs',
+    'os'
+  ]
+}
+db.students.updateOne({sid:520},{$pull:'sphone'})
+MongoServerError: Modifiers operate on fields but we found type string instead. For example: {$mod: {<field>: ...}} not {$pull: "sphone"}
+db.students.updateOne({sid:520},{$pull:{subjects:{'math'}}})
+SyntaxError: Unexpected token (1:56)
+
+> 1 | db.students.updateOne({sid:520},{$pull:{subjects:{'math'}}})
+    |                                                         ^
+db.students.updateOne({sid:520},{$pull:{subjects:'math'}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+db.students.find({sid:520}).pretty()
+{
+  _id: ObjectId('65bc92a5df5eb12853b67d91'),
+  sid: 520,
+  sphone: 9390215759,
+  sname: 'aravind Kumar',
+  subjects: [
+    'english',
+    'chemistry',
+    'cs',
+    'os'
+  ]
+}
+db.students.updateOne({sid:520},{$set:{subjects.$:"math"}})
+SyntaxError: Unexpected token, expected "," (1:47)
+
+> 1 | db.students.updateOne({sid:520},{$set:{subjects.$:"math"}})
+    |                                                ^
+db.students.updateOne({sid:520},{$set:{'subjects.$':'math'}})
+MongoServerError: The positional operator did not find the match needed from the query.
+db.students.updateOne({sid:520},{$push:{subjects:'math'}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+db.students.find({sid:520}).pretty()
+{
+  _id: ObjectId('65bc92a5df5eb12853b67d91'),
+  sid: 520,
+  sphone: 9390215759,
+  sname: 'aravind Kumar',
+  subjects: [
+    'english',
+    'chemistry',
+    'cs',
+    'os',
+    'math'
+  ]
+}
+db.students.updateOne({sid:520},{$push:{subjects:'biology',$position:1}})
+MongoServerError: The dollar ($) prefixed field '$position' in '$position' is not allowed in the context of an update's replacement document. Consider using an aggregation pipeline with $replaceWith.
+//particular posion at end
+db.students.updateOne({sid:520},{$push:{subjects:{$each:['python'],$position:-1}}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+db.students.find({sid:520}).pretty()
+{
+  _id: ObjectId('65bc92a5df5eb12853b67d91'),
+  sid: 520,
+  sphone: 9390215759,
+  sname: 'aravind Kumar',
+  subjects: [
+    'english',
+    'chemistry',
+    'cs',
+    'os',
+    'python',
+    'math'
+  ]
+}
+db.students.updateMany({},{$push:{subjects:"zooooo"}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 4,
+  modifiedCount: 4,
+  upsertedCount: 0
+}
+db.students.find().pretty()
+{
+  _id: ObjectId('65bc92a5df5eb12853b67d91'),
+  sid: 520,
+  sphone: 9390215759,
+  sname: 'aravind Kumar',
+  subjects: [
+    'english',
+    'chemistry',
+    'cs',
+    'os',
+    'python',
+    'math',
+    'zooooo'
+  ]
+}
+{
+  _id: ObjectId('65bc92a5df5eb12853b67d92'),
+  sid: 521,
+  sname: 'susu',
+  sphone: 8564773420,
+  smarks: 86,
+  subjects: [
+    'zooooo'
+  ]
+}
+{
+  _id: ObjectId('65bc92eedf5eb12853b67d93'),
+  sid: 522,
+  sname: 'idress',
+  sphone: 9546785759,
+  smarks: 89,
+  subjects: [
+    'zooooo'
+  ]
+}
+{
+  _id: ObjectId('65bc92eedf5eb12853b67d94'),
+  sid: 523,
+  sname: 'gopal',
+  sphone: 9673453420,
+  smarks: 85,
+  subjects: [
+    'zooooo'
+  ]
+}
+//above push subjets to all documents
+db.students.deleteOne({sid:523})
+{
+  acknowledged: true,
+  deletedCount: 1
+}
+db.students.find()
+{
+  _id: ObjectId('65bc92a5df5eb12853b67d91'),
+  sid: 520,
+  sphone: 9390215759,
+  sname: 'aravind Kumar',
+  subjects: [
+    'english',
+    'chemistry',
+    'cs',
+    'os',
+    'python',
+    'math',
+    'zooooo'
+  ]
+}
+{
+  _id: ObjectId('65bc92a5df5eb12853b67d92'),
+  sid: 521,
+  sname: 'susu',
+  sphone: 8564773420,
+  smarks: 86,
+  subjects: [
+    'zooooo'
+  ]
+}
+{
+  _id: ObjectId('65bc92eedf5eb12853b67d93'),
+  sid: 522,
+  sname: 'idress',
+  sphone: 9546785759,
+  smarks: 89,
+  subjects: [
+    'zooooo'
+  ]
+}
+db.students.deleteOne({})
+{
+  acknowledged: true,
+  deletedCount: 1
+}
+db.students.find()
+{
+  _id: ObjectId('65bc92a5df5eb12853b67d92'),
+  sid: 521,
+  sname: 'susu',
+  sphone: 8564773420,
+  smarks: 86,
+  subjects: [
+    'zooooo'
+  ]
+}
+{
+  _id: ObjectId('65bc92eedf5eb12853b67d93'),
+  sid: 522,
+  sname: 'idress',
+  sphone: 9546785759,
+  smarks: 89,
+  subjects: [
+    'zooooo'
+  ]
+}
+db.students.deleteMany({})
+{
+  acknowledged: true,
+  deletedCount: 2
+}
+db.students.find()
+>
+//all documents deleted....
