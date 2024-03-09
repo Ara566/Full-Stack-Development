@@ -1,0 +1,28 @@
+.App{
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  padding: 20px 20px;
+  height: 50vh;
+  gap: 15px;
+}
+
+.App button{
+  padding: 10px 14px;
+  color: rgb(238, 15, 85);
+}
+button:disabled{
+  opacity: 0.3;
+}
+#b1{
+  background-color: rgb(7, 189, 59);
+}
+#b2{
+  background-color: rgb(3, 106, 106);
+}
+
+#abc{
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
