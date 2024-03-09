@@ -1,0 +1,17 @@
+Vite is a build tool and provides tools that aims to provide a faster and more efficient development 
+experience for modern web projects, including React.js applications.
+
+---->save time bcz provides the libreries ex:whatever we write in JSX its not understood to 
+browser so need babel ,like for development server need onemore librery .....
+---->faster output
+---->more efficient
+
+
+
+
+1.create app:              npx create-vite app-name
+2.select framework:        React
+3.select variant:          JavaScript
+4.Change directory:        cd app-name
+5.for install dependencies: npm i
+6.run development server:   npm run dev   
