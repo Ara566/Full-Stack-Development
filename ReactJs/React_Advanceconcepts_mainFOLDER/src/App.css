@@ -1,0 +1,17 @@
+
+
+table,
+tr,
+td {
+    border: 1px solid gray;
+}
+
+table {
+    border-collapse: collapse;
+    margin-top: 20px;
+    width: 40%;
+}
+
+.header {
+    color: blue;
+}
