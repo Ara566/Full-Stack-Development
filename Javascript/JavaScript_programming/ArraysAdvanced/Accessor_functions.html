@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // searching for a value
+        var names=["ara","vind","kumar","ara","vind"];
+        /*
+        var names=["ara","vind","kumar","ara","vind"];
+        var searchname=prompt("enter name:");
+        firstoccur=names.indexOf(searchname);
+        lastoccur=names.lastIndexOf(searchname);
+        document.write("first occurence index: "+firstoccur+"<br>");
+        document.write("last occur index: "+lastoccur);
+        */
+
+        //String Representation of array
+
+        /*
+        document.write(names.join()+"<br>");
+        document.write(names.toString()); 
+        */
+
+        //creating new array from exiting array 
+
+        var arr=["apple","banana","mango"];
+        newarr=arr.concat(names)  //concat()
+        document.write(newarr+"<br>");
+        newarrsplice=newarr.splice(1,4);
+        document.write(newarrsplice);
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var divisibleby2=function (value,index,arr){
+            return value%2==0
+        }
+
+
+        var arr=[5,7,3,9,10];
+        var result=arr.some(divisibleby2)
+        document.writeln(result)
+
+        function checkstr(value,index,arrstr){
+            var result=value.includes('d')
+            return result
+        }
+
+
+        var str='aravink'
+        var arrstr=str.split('');
+        document.writeln(arrstr.some(checkstr))
+    </script>
+</body>
+</html>

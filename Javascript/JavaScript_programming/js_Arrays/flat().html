@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //Original array
+      var arr = [[11, 89], [23, 7], 98];
+
+      // Performing flat method
+      let flatarr = arr.flat();
+
+      document.write(flatarr+'<br/>')
+
+      var myarr=[[1],[2],[3],[4]]
+      var flatmap=myarr.flatMap(fun)
+      document.writeln(flatmap)
+
+      function fun(elemnts){
+        return elemnts*2
+      }
+    </script>
+  </body>
+</html>

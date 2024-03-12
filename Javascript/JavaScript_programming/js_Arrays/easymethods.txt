@@ -1,0 +1,24 @@
+
+arr.concat()
+
+adding elemt to array
+            at end               arr.push()
+            at biggining         arr.unshift()
+
+removing element 
+            at end               arr.pop()
+            at biggining         arr.shift()
+
+at any possion
+                        arr.splice(startidx,deletecount,ele1,ele2,ele3....)
+
+slice(start,end) return new arr
+
+join('') array to string
+
+reverse()
+
+sort()
+
+Array.from()
+

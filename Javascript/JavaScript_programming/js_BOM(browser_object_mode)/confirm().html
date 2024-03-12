@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<script>
+        //displays the confirm dialog box containing message with ok and cancel button.
+    function message(){
+        /*
+        var value=confirm("do you want to leave site ?")
+        if(value == true){
+            alert("ok")
+        }
+        else{
+            alert('canceled')
+        }
+        */ 
+        var value=confirm("do you want to leave site ?")
+        var result=(value==true)? "ok bye":"thanks for stay with us";
+        alert(result)
+    }
+</script>
+</head>
+
+<body>
+   Enter submit button : <input type="button" onclick="message()" value="submit">
+</body>
+</html>

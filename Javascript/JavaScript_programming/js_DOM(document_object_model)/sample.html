@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <script>
+        //Accessing field value by document object
+        function message(){
+            var myname=document.sample.name.value;
+            document.writeln(myname);
+        }
+    </script>
+</head>
+<body>
+    <form name="sample">
+        Enter name :<input type="text/html" name="name">
+        <button type="button" value="click" onclick="message()">click</button>
+    </form>
+</body>
+</html>

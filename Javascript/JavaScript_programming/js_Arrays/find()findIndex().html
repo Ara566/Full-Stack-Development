@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let array = [10, 20, 30, 40, 50];
+      let find = array.find((element)=>element >30)   
+      document.writeln(find+'<br/>') //finds the elemnt 1st occur
+
+      let findindex=array.findIndex(function(element){
+        return element>30
+      })
+      document.write(findindex)
+    </script>
+  </body>
+</html>

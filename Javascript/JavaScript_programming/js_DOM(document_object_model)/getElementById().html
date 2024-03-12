@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <script>
+        function message(){
+            var myname=document.getElementById("idbased").value;
+            document.writeln(myname);
+        }
+        function sqrtnum(){
+            var num=document.getElementById("number").value;
+            alert(Math.sqrt(num));
+        }
+    </script>
+</head>
+<body>
+    <form>
+        Enter name :<input id="idbased" type="text/html" name="name">
+        <button type="button" value="click" onclick="message()">click</button><br/>
+        Enter No:<input type="text" id="number" name="number"/> 
+        <button type="button" onclick="sqrtnum()" value="squrt">sqrt</button>
+    </form>
+</body>
+</html>

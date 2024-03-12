@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      function showcommentform() {
+      var data="Name:<input type='text' name='name'><br>Comment:<br><textarea rows='5' cols='80'></textarea><br><input type='submit' value='Post Comment'><br> State:<input name='name' type='text'>";
+      document.getElementById('mylocation').innerHTML=data;
+      }
+    </script>
+    <form name="myForm">
+      <input type="button" value="comment" onclick="showcommentform()" />
+      <div id="mylocation"></div>
+    </form>
+    <!--
+      <body>
+    <script type="text/javascript">
+        function myfun(){
+            var data="Name: <input type='text/html'> <br>Password: <input type='password' name='name'>"
+            document.getElementById('demo').innerHTML=data;
+
+            var sampledata="Enter your gender:<input type='radio' name='gender' value='male'>Male <input type='radio' name='gender' value='female'>female";
+            document.getElementById('sample').innerHTML=sampledata;
+        }
+
+    </script>
+    <form name="myform">
+        <input type="button" value="click" onclick="myfun()">
+        <div id="demo"></div>
+        <br>
+        <br>
+        <p>welcome to all</p>
+        <div id="sample"></div>
+    </form>
+</body>
+    -->
+  </body>
+</html>

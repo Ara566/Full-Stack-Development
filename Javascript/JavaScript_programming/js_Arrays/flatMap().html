@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+        /*
+      var myarr = [[1], [2], [3], [4]];
+      var flatmap = myarr.flatMap(fun);
+      document.writeln(flatmap);
+
+      function fun(elemnts) {
+        return elemnts * 2;
+      } */
+
+      var arr=[1,2,3,4,5]
+      var str=['orange','tomaato','apple','grape','brenzle']
+      var newarr=arr.flatMap((arr,index)=>[arr,str[index]])
+      document.write(newarr)
+    </script>
+  </body>
+</html>

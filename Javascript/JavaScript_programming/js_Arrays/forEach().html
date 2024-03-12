@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+
+      //This method calls the provided function once for each element of the array. 
+      //The provided function may perform any kind of operation on the elements of the given array.
+      var arr=[1,2,3,4,5]
+      var newarr=[]
+      
+      arr.forEach(function(element){
+            newarr.push(element*2);
+      })
+
+      document.write(newarr) 
+
+    </script>
+  </body>
+</html>
