@@ -1,0 +1,127 @@
+//CORE MODULES
+)))))))))))))))))))1)File system module)))))))))))))))))))))))))))
+var fs = require('fs’)  refer gfg
+
+
+1)Open a File:
+                The fs.open() method is used to create, read, or write a file
+                Syntax: 
+
+                fs.open( filename, flags, mode, callback )
+
+2)readFile(path,encoding,callback(err,data))
+    This method read the entire file into buffer
+
+    In summary, toString() is used to convert objects to strings, 
+    while toLocaleString() is used for date formatting based on the current locale settings.
+                
+3)writeFile()
+4)appendFile()
+5)unlink()
+6)mkdir()used to create folder 
+7)rmdir() used to remove folder 
+8)readdir() used to find all folders in folders
+
+)))))))))))))))))))))))))))))))))))))))))))))))))))TOPIC 2 export and import))))))))))))))))))))))))))))))))))))))))))))))))
+module.exports={fun1,fun2}
+here module.exports is an object
+
+))))))))))))))))))))))))))))))))))))))))))))))TOPIC 3 HTTP module))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
+HTTP2 have special feture______>designed to improve website performance by allowing multiple requests and responses to be multiplexed over a single connection.
+The Node.js `http` module provides functionality to create HTTP servers and clients. It is a core module in Node.js, so you don't need to install it separately. Here's a complete reference to the `http` module:
+the HTTP module makes it easy for developers to build web applications by handling HTTP requests and responses, 
+managing connections, and providing support for various HTTP methods (such as GET, POST, PUT, DELETE). 
+By leveraging the HTTP module, developers can quickly create efficient and high-performing servers without the need for extensive setup or configuration.
+
+HTTP Module's Main Features:
+   -->Creating HTTP server:  http.createServer(),
+                           This method returns an instance of the http.Server class,
+                           which can listen for incoming requests and respond with the appropriate content.
+                        
+   -->Creating HTTP client: http.request()-->Creates a new HTTP request.
+                            http.get()-->Make a GET request to the specified URL
+                            request.end()--> Sends the request to the server.
+
+                            these methods for making HTTP requests to external servers. 
+                            which can be used to send and receive data from remote server
+
+refer httpmodule:main
+------------------------->httpAgent.js
+------------------------->httpclientrequet.js
+
+)))))))))))))))))))))))))))))))))))))))))))))))))refer Buffrersfile))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
+
+))))))))))))))))))))))))))))))))))))))))))))))))))Assertmodule)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
+------------------------>Node.js assert.equal() Function main
+
+))))))))))))))))))))))))))))))))))))))))))))))))))console module:))))))))))))))))))))))))))))))))))))))))))))))))))))))))
+------------------------>Node.js console module is a global object that provides 
+a simple debugging console similar to JavaScript to display different levels of the message. It is provided by web browsers.
+
+
+
+)))))))))))))))))))))))))))))))))))))))))))))DNS(domain name service ) module refer dnsmodule file)))))))))))))))))))))))))))
+
+))))))))))))))))))))))))))))))))))))))))))))))Timersmodule refer timers module)))))))))))))))))))))))))))))))))))))))))))))
+--------------------->scheduling timers
+--------------------->canceling timers
+
+
+)))))))))))))))))))))))))))))))))))))))))))Node.js URLsearchParams API)))))))))))))))))))))))))))))))))
+
+The URLSearchParams API in Node.js allows read and write operations on the URL query.
+used to handle query string parameters in URLs. 
+It provides methods to manipulate and access query parameters easily. 
+
+
+Constructors:
+new URLSearchParams(): No argument constructor instantiates a new empty URLSearchParams object.
+new URLSearchParams(string): Accepts a string as an argument to instantiate a new URLSearchParams object.
+
+--->Create URLSearchParams object:
+    You can create a new URLSearchParams object by passing a URL or query string to its constructor. 
+
+    const { URLSearchParams } = require('url');
+    const params = new URLSearchParams('foo=bar&abc=123');
+
+--->Add or set parameters:
+    You can add or set new query parameters using the append and set methods:
+
+    params.append('newParam', 'value');
+    params.set('existingParam', 'newValue');
+
+
+--->Get parameters:
+    You can get the value of a parameter using the get method:
+    const value = params.get('existingParam');
+
+--->Delete parameters:
+    You can delete a parameter using the delete method:
+
+    params.delete('existingParam');
+
+--->Iterate over parameters:
+    You can iterate over all parameters using the forEach method:
+
+    params.forEach((value, key) => {
+    console.log(`${key}: ${value}`);
+    });
+
+-->Convert back to string:
+    You can convert the URLSearchParams object back to a query string using the toString method:
+
+    const queryString = params.toString();
+
+)))))))))))))))))))))))))))))))))))))))))))))))))))))))))HTTP2 module)))))))))))))))))))))))))))))))))))))))))))))))))))))))
+designed to improve website performance by allowing multiple requests and responses to be multiplexed over a single connection.
+In HTTP/2, multiple requests between the client and the server are sent over the same TCP connection. 
+
+
+
+
+
+
+
+
+
+

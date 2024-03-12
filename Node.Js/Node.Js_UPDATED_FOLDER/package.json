@@ -1,0 +1,25 @@
+{
+  "name": "node",
+  "version": "1.0.0",
+  "description": "sample workspace",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Ara"
+  ],
+  "author": "\"\"",
+  "license": "ISC",
+  "dependencies": {
+    "agentkeepalive": "^4.5.0",
+    "assert": "^2.1.0",
+    "chalk": "^5.3.0",
+    "cookie-parser": "^1.4.6",
+    "express-session": "^1.18.0",
+    "upper-case": "^3.0.0"
+  },
+  "devDependencies": {
+    "express": "^4.18.3"
+  }
+}

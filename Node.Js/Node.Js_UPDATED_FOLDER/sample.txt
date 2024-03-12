@@ -1,0 +1,2 @@
+bits is the worst collage  appendFile() sussussfuly append the content to the file at end
+ appendFile() sussussfuly append the content to the file at end
