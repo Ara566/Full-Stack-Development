@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+     function displayDiamond(rows) {
+    let space = Math.floor(rows / 2);
+    let stars = 1;
+
+    for (let i = 1; i <= rows; i++) {
+        let line = "";
+        for (let j = 1; j <= space; j++) {
+            line += " ";
+        }
+
+        let count = Math.floor(stars / 2) + 1;
+        for (let k = 1; k <= stars; k++) {
+            line += count;
+            if (k <= stars / 2) {
+                count--;
+            } else {
+                count++;
+            }
+        }
+
+        console.log(line);
+        if (i <= rows / 2) {
+            space--;
+            stars += 2;
+        } else {
+            space++;
+            stars -= 2;
+        }
+    }
+}
+
+var rows = 7;
+displayDiamond(rows);
+
+      /*
+        Input : 5
+Output :
+  1
+ 212
+32123
+ 212
+  1
+
+Input : 7
+Output :
+   1
+  212
+ 32123
+4321234
+ 32123
+  212
+   1 */
+    </script>
+  </body>
+</html>

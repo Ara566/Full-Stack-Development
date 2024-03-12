@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function anagram(str1,str2){
+            let s1=str1.split('').sort().join('')
+            let s2=str2.split('').sort().join('')
+            if(s1===s2) return "anagram"
+        }
+
+        let str1="Aravind"
+        let str2="dnivarA"
+        document.write(anagram(str1,str2))
+    </script>
+</body>
+</html>

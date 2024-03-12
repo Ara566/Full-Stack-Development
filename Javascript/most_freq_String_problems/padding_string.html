@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let padstr=function (str){
+            let res=String(str).padStart(10,'*');
+            let myres=res.padEnd(16,'$*');
+            return myres
+        }
+        document.write(padstr("Kumar"))
+    </script>
+</body>
+</html>

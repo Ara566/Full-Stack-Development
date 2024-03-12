@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function vowels(str){
+            let vowellist='aeiouAeiou';
+            let count=0
+            for(let i=0;i<str.length;i++){
+                if(vowellist.includes(str[i])){
+                    count++
+                }
+            }
+            return count
+        }
+        document.write(vowels('aeiouaeiouaeiou'))
+        /*
+        function vowelCount(str) {
+	const vowelRegex = /[aeiou]/gi; 
+	const strMatches = str.match(vowelRegex);
+
+	if (strMatches) {
+		return strMatches.length;
+	} else {
+		return 0; 
+	}
+}
+const string = "Geeksforgeeks";
+const len = vowelCount(string);
+console.log("Number of vowels:", len);
+*/
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function displayDiamond(rows) {
+    let space = Math.floor(rows / 2);
+    let stars = 1;
+
+    for (let i = 1; i <= rows; i++) {
+        let line = ' '.repeat(space) + '*'.repeat(stars) + ' '.repeat(space);
+        console.log(line);
+
+        if (i <= Math.floor(rows / 2)) {
+            space--;
+            stars += 2;
+        } else {
+            space++;
+            stars -= 2;
+        }
+    }
+}
+
+// Example usage
+let rows = 7;
+displayDiamond(rows);
+
+    </script>
+</body>
+</html>

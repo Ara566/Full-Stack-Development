@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //using Number(object) method
+      function fun() {
+        let num1 = new Number(5);
+        let num2 = Number("Aravind");
+        let num3 = Number(new Date("12-06-2020")); //milliseconds
+        document.write(num1 + "<br/>");
+        document.write(num2 + "<br/>");
+        document.write(num3 + "<br/>");
+      }
+      //call fun()
+
+      //using coercion technique multiply the string by 1
+      function coercion() {
+        let mystr = "aravind2";
+        let b = mystr * 1;
+        document.write(b + "<br/>");
+        document.write(typeof b + "<br/>");
+        let c = "100";
+        let d = c * 1;
+        document.write(d + "<br/>");
+      }
+      // coercion()
+      function convertStoI() {
+        let a = "100";
+        let b = Math.floor(a);
+        console.log(typeof b);
+      }
+      convertStoI();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function half(str){
+            let lenstr=str.length;
+            let midpoint=Math.ceil(lenstr/2);
+
+            let upp=str.substr(0,midpoint)
+            let low=str.substr(midpoint);
+            let result=upp.toUpperCase()+low.toLowerCase();
+
+            return result;
+        }
+        document.write(half("AravindKUMar"))
+    </script>
+</body>
+</html>

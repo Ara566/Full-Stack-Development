@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function uniquechar(str){
+            let str1=str.match(/(.)(?!\1)/g);
+            return str1
+        }
+        //document.write(uniquechar("AAAravind Kumar"))
+
+
+        function usingsetspreed(str){
+            let arrstr=str.split('')
+            console.log(arrstr)
+            let newset=new Set(arrstr)
+            console.log(newset)
+            let result=[...newset].join('')
+            console.log(result)
+            return result
+
+        }
+        //document.write(usingsetspreed("AravindKumar Gaaaanthhala"))
+
+        //naive apporch
+        function normal(str){
+            let unique=''
+            for(let i=0;i<str.length;i++){
+                if(unique.includes(str[i])===false){
+                    unique+=str[i]
+                }
+            }
+            return unique
+        }
+        document.write(normal("AravindKumar Gaaaanthhala"))
+        
+    </script>
+</body>
+</html>

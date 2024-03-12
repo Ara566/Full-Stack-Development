@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function majority(arr,len){
+            let maxcount=0;
+            let index=0
+            for(let i=0;i<len;i++){
+                let count=0
+                for(let j=0;j<len;j++){
+                    if(arr[i]==arr[j]){
+                        count++
+                    }
+                }
+                if(count>maxcount){
+                    maxcount=count
+                    index=i
+                }
+            }
+
+            if(maxcount > len/2) return arr[index];
+            else return "no majority element"
+
+        }
+        let arr=[ 1,2,3,2,2,2,2]
+        let len=arr.length;
+        console.log(majority(arr,len))
+
+    </script>
+</body>
+</html>

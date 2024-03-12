@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function removeDuplicates(uniqueArray){
+        let res=Array.from(new Set(uniqueArray))
+        return res
+      }
+
+      // Example usage:
+      let sortedArray = [1, 1, 2, 2, 3, 4, 4, 5, 5];
+      let uniqueArray = removeDuplicates(sortedArray);
+      console.log("Array with duplicates removed:", uniqueArray); // Output: [1, 2, 3, 4, 5]
+    </script>
+  </body>
+</html>

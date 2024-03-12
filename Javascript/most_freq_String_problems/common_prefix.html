@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var longestCommonPrefix = function (strs) {
+        let commonPrefix = "";
+        let firstString = strs[0];
+
+        if (strs.length === 0) return "";
+
+        for (let j = 0; j <= firstString.length; j++) {
+          let isNotMatched = false;
+          for (let i = 1; i < strs.length; i++) {
+            if (strs[i][j] !== firstString[j]) {
+              isNotMatched = true;
+              break;
+            }
+          }
+          if (isNotMatched) {
+            break;
+          } else if (firstString[j]) {
+            commonPrefix += firstString[j];
+          }
+        }
+
+        return commonPrefix;
+      };
+
+      document.write(longestCommonPrefix(['flghwer','fl78owde','ddfowkkd']))
+    </script>
+  </body>
+</html>

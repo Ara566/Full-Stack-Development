@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //using push() and slice() array ds methods
+        function combinations(str='Aravind'){
+            let arr=[]
+            for(let i=0;i<=str.length;i++){
+                for(let j=i+1;j<=str.length;j++){
+                    arr.push(str.slice(i,j))
+                }
+            }
+            return arr
+        }
+        //document.write(combinations()+'<br/>')
+        //document.write(combinations().length)
+
+
+        //using chatAt() and concat()
+        function numcom(str){
+            let strlen=str.length;
+            let curindex=0
+            let result=[]
+            while(curindex<strlen){
+                let char=str.charAt(curindex)
+                let temarr=[char]
+                for(i in result){
+                    temarr.push(""+result[i]+char);
+                }
+                result=result.concat(temarr)
+                curindex++;
+
+            }
+            return result
+        }
+        document.write(numcom('dog'))
+    </script>
+</body>
+</html>

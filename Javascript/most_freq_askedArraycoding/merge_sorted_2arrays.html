@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function merge(arr1, arr2){
+        let arr3=arr1.concat(arr2)
+        return arr3.sort((a,b)=>(a-b))  //comparison 
+
+      }
+
+      const arr1 = [1, 3, 10, 7];
+      const arr2 = [2, 4, 6, 8];
+      console.log(merge(arr1,arr2))
+    </script>
+  </body>
+</html>

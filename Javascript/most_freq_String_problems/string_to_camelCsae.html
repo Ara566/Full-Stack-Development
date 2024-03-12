@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //using split(" ") and reduce(s,c)
+      function camel(str) {
+        let lowerstr = str.toLowerCase();
+        document.write(lowerstr + "<br/>");
+        let res = lowerstr
+          .split(" ")
+          .reduce((s, c) => s + (c.charAt(0).toUpperCase() + c.slice(1)));
+
+        console.log(res);
+      }
+      let str = "Click the button to convert to camelCase";
+      //camel(str)
+//..........................................................................................
+      // Requiring the lodash library
+      const _ = require("lodash");
+
+      // Use of _.camelCase() method
+      let str1 = _.camelCase("Geeks for Geeks");
+
+      // Printing the output
+      console.log(str1);
+
+      // Use of _.camelCase() method
+      let str2 = _.camelCase("GFG-Geeks");
+
+      // Printing the output
+      console.log(str2);
+    </script>
+  </body>
+</html>

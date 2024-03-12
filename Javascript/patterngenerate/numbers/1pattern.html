@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function generatePattern(size){
+        let init=1
+        let res=''
+        for(let i=1;i<=size;i++){  //i indicate row j indicate elements
+            for(let j=1;j<=i;j++){
+                res+=init+' ';
+                init++;
+            }
+            res+='\n'
+        }
+        return res.trim()
+      }
+
+      // Test cases
+      console.log("The pattern generated is:\n" + generatePattern(5));
+      console.log("The pattern generated is:\n" + generatePattern(8));
+      console.log("The pattern generated is:\n" + generatePattern(13));
+    </script>
+  </body>
+</html>

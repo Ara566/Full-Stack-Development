@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function generatePattern(size) {
+        let result = "";
+        for (let i = 1; i <= size; i++) {
+          // Adding spaces before the numbers
+          for (let j = 0; j < size - i; j++) {
+            result += " ";
+          }
+          // Adding numbers in ascending order
+          for (let j = i; j <= 2 * i - 1; j++) {
+            result += j;
+          }
+          // Adding numbers in descending order
+          for (let j = 2 * i - 2; j >= i; j--) {
+            result += j;
+          }
+          // Moving to the next line
+          result += "\n";
+        }
+        return result;
+      }
+
+      console.log(generatePattern(2));
+    </script>
+  </body>
+</html>

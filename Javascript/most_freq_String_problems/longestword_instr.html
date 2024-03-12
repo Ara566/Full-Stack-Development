@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function longword(str){
+            let strres=''
+            let arrstr=str.split(' ')
+            for(let i=0;i<arrstr.length;i++){
+                if(arrstr[i].length>strres.length){
+                    strres=arrstr[i]
+                }
+            }
+            document.write(typeof(strres)+'<br/>')
+            return strres
+        }
+        let str='My name is AravindKumar Ganthalangdhks'
+        document.write(longword(str))
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      
+      function pattern(N) {
+        let count = 1;
+        for (let i = 1; i <= 2 * N - 1; i++) {
+          let row = "";
+          let maxStars = i <= N ? i : 2 * N - i;
+          for (let j = 1; j <= maxStars; j++) {
+            if (j < maxStars) {
+              row += count++ + "*";
+            } else {
+              row += count++;
+            }
+          }
+          console.log(row);
+        }
+      }
+
+      let N = 4;
+      pattern(N);
+      
+
+      /*
+                 1
+6pattern.html:22 2*3
+6pattern.html:22 4*5*6
+6pattern.html:22 7*8*9*10
+6pattern.html:22 11*12*13
+6pattern.html:22 14*15
+6pattern.html:22 16
+*/
+    </script>
+  </body>
+</html>
